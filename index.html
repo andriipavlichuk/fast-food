@@ -4,75 +4,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфоліо</title>
+    <title>FastFood • Швидка та смачна доставка</title>
+    <link rel="icon" type="image/ico" href="/favicon.ico">
 </head>
 
 <body>
-    <nav>
-        <div class="logo">FastFood</div>
-
-        <ul>
-            <li><a href="./about/index.html">Головна</a></li>
-            <li><a href="./catalog/index.html">Каталог</a></li>
-            <li><a href="./index.html">Про нас</a></li>
-            <li><a href="./index.html">Контакти</a></li>
-        </ul>
-
-        <ul>
-            <li><a href="./about/index.html">Корзина</a></li>
-            <li><a href="./cart/index.html">Увійти</a></li>
-        </ul>
-    </nav>
-
     <header>
-        <h1>Доставимо їжу швидше, ніж ви думаєте</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae tenetur incidunt quaerat asperiores minus, corporis rerum corrupti, doloremque ea iste hic tempora, dicta aspernatur nulla sequi quae at dolorum velit!</p>
-        <img src="./images/Delivery guy.png" alt="Delivery guy" width="180">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">FastFood</div>
+            <ul class="nav-center">
+                <li><a href="/">Головна</a></li>
+                <li><a href="/catalog/">Каталог</a></li>
+                <li><a href="/about/">Про нас</a></li>
+                <li><a href="/contact/">Контакти</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="/cart/">
+                        <img src="/icons/cart.svg" alt="Корзина" width="20">
+                </li>
+                <li><a href="/account/">Увійти</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="catalog">
-        <h2>Що сьогодні замовлятимите?</h2>
-        <a href="./catalog/index.html"><button>Показати увесь каталог</button></a>
-    </section>
+    <main>
+        <!-- Hero -->
+        <section>
+            <h1>Доставимо їжу швидше, ніж ви думаєте!</h1>
+            <p>FastFood - це коли смачно, корисно і миттєво! Вам не доведеться чекати годинами – наші кур’єри вже в дорозі.
+            </p>
+            <img src="/images/Delivery guy.png" alt="Кур’єр" width="180">
+            <button class="scroll">Гортайте ↓</button>
+        </section>
 
-    <section id="about">
-        <h2>Про нас</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam sunt et facilis doloremque quo consectetur alias dolorum adipisci architecto, eveniet, itaque explicabo velit, id porro! Laborum quisquam eaque sapiente voluptatem.</p>
-        <a href="./about/index.html"><button>Показати більше</button></a>
-    </section>
-
-    <section id="reivews">
-        <h2>Що про нас говорять люди</h2>
-
-        <div class="review">
-            <div class="author">
-                <img src="./images/Oleksandr.png" alt="Олександр">
-                <p class="name">Олександр</p>
+        <!-- Popular stuff / Link to catalog -->
+        <section id="catalog">
+            <h2>Що сьогодні замовлятимете?</h2>
+            <div class="grid">
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/burger.png" alt="Королівський бургер" width="150">
+                    <h3>Королівський бургер</h3>
+                    <p>Соковита котлета, сир чеддер, свіже листя салату та соус барбекю.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/pizza.png" alt="Піца Швидка Маргарита" width="150">
+                    <h3>Піца "Швидка Маргарита"</h3>
+                    <p>Тонке тісто, ароматний томатний соус, моцарела та базилік.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/sushi.png" alt="Філадельфія лайт" width="150">
+                    <h3>Філадельфія лайт</h3>
+                    <p>Ніжний лосось, вершковий сир, авокадо та рис – ідеальне поєднання.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/burger2.png" alt="Дабл Чізбургер" width="150">
+                    <h3>Дабл Чізбургер</h3>
+                    <p>Подвійна котлета, подвійний сир та фірмовий соус для максимального смаку.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/burger3.png" alt="Чікен Бургер" width="150">
+                    <h3>Чікен Бургер</h3>
+                    <p>Соковита куряча котлета, свіжі овочі та соус ранч.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/pizza2.png" alt="Піца Пепероні" width="150">
+                    <h3>Піца Пепероні</h3>
+                    <p>Тонке тісто, томатний соус, моцарела та пікантна пепероні.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/sushi2.png" alt="Каліфорнія рол" width="150">
+                    <h3>Каліфорнія рол</h3>
+                    <p>Крабове м'ясо, авокадо, огірок та ікра тобіко.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="badge">Популярне</span>
+                    <img src="/images/burger4.png" alt="Веган Бургер" width="150">
+                    <h3>Веган Бургер</h3>
+                    <p>Рослинна котлета, свіжі овочі та веганський соус.</p>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
             </div>
-            <div class="rating">⭐⭐⭐⭐⭐</div>
-            <p class="content">Дуже задоволений сервісом "FastFood"! Замовлення прийшло швидко, їжа була гарячою та смачною. Кур’єр привітний, доставка без затримок. Обов’язково замовлю ще!</p>
-        </div>
+            <a href="/catalog/index.html">
+                <button>Показати увесь каталог →</button>
+            </a>
+        </section>
 
-        <div class="review">
-            <div class="author">
-                <img src="./images/Maryna.png" alt="Марина">
-                <p class="name">Марина</p>
+        <!-- A lil' about the service -->
+        <section id="about">
+            <h2>Про нас</h2>
+            <p>FastFood – це сервіс доставки, який поєднує швидкість і якість. Ми обираємо тільки найкращі продукти, щоб
+                ви насолоджувалися ідеальним смаком.
+                Наша команда щодня працює над вдосконаленням сервісу, аби ваші замовлення приходили не лише швидко, а й
+                завжди гарячими та смачними. Ми пишаємося тим, що ви обираєте нас знову і знову!
+                У нашому меню – лише найкращі бургери, піца та суші, які готуються з любов’ю та за перевіреними
+                рецептами. Завітайте до FastFood та спробуйте справжню швидку їжу!</p>
+            <a href="/about/index.html">
+                <button>Більше →</button>
+            </a>
+        </section>
+
+        <!-- Testimonies -->
+        <section id="reviews">
+            <h2>Що про нас говорять люди</h2>
+            <div class="review">
+                <div class="author">
+                    <img src="/images/Oleksandr.png" alt="Олександр">
+                    <p class="name">Олександр</p>
+                </div>
+                <div class="rating">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                </div>
+                <p class="content">Дуже задоволений сервісом! Замовлення прийшло швидко, їжа була гарячою та смачною.
+                </p>
             </div>
-            <div class="rating">⭐⭐⭐⭐☆</div>
-            <p class="content">Хороший сервіс, але було невелике запізнення – довелося чекати на 15 хвилин довше, ніж зазначено. Проте їжа свіжа і смачна, тому загалом враження позитивні.</p>
-        </div>
-
-        <div class="review">
-            <div class="author">
-                <img src="./images/Vladyslav.png" alt="Владислав">
-                <p class="name">Владислав</p>
+            <div class="review">
+                <div class="author">
+                    <img src="/images/Maryna.png" alt="Марина">
+                    <p class="name">Марина</p>
+                </div>
+                <div class="rating">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/start_border.svg" alt="Без зірки" width="20">
+                </div>
+                <p class="content">Хороший сервіс, але було невелике запізнення. Проте їжа свіжа і смачна.</p>
             </div>
-            <div class="rating">⭐⭐⭐⭐⭐</div>
-            <p class="content">Сервіс приємно здивував! Замовлення привезли навіть швидше, ніж очікував. Їжа свіжа, гаряча і дуже смачна. Кур’єр був ввічливим. Тепер це мій улюблений сервіс доставки!</p>
-        </div>
-    </section>
+            <div class="review">
+                <div class="author">
+                    <img src="/images/Vladyslav.png" alt="Владислав">
+                    <p class="name">Владислав</p>
+                </div>
+                <div class="rating">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                    <img src="/icons/star.svg" alt="Зірка" width="20">
+                </div>
+                <p class="content">Сервіс приємно здивував! Їжа гаряча, доставка швидка, кур’єр ввічливий.</p>
+            </div>
+        </section>
 
-    <footer>© Copyright FastFood 2017-2025. All rights reserved.</footer>
+        <!-- Call to action -->
+        <section id="cta">
+            <h2>Голодний? Замов прямо зараз!</h2>
+            <p>Ваші улюблені страви вже чекають. Швидкість - наш козир!</p>
+            <a href="/catalog/index.html"><button>Перейти до каталогу →</button></a>
+        </section>
+    </main>
+
+    <!-- Footer: Copyright & ScrollToTop -->
+    <footer>
+        <p>&copy; FastFood 2017-2025. Всі права захищені.</p>
+        <a href="#top">↑ До гори</a>
+    </footer>
 </body>
 
 </html>
