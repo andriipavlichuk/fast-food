@@ -4,57 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastFood • Швидка та смачна доставка</title>
+    <title>FastFood • Зв'язатися з нами</title>
     <link rel="icon" type="image/ico" href="/favicon.ico">
+<!--    <link rel="stylesheet" href="/css/Global.css">-->
+<!--    <link rel="stylesheet" href="/css/contact-page.css">-->
 </head>
 
 <body>
-    <header>
-        <!-- Navigation -->
-        <nav>
-            <div class="logo">FastFood</div>
-            <ul class="nav-center">
-                <li><a href="/">Головна</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/about/">Про нас</a></li>
-                <li><a href="/contact/">Контакти</a></li>
-            </ul>
-            <ul class="nav-right">
-                <li><a href="/cart/">
-                        <img src="/icons/cart.svg" alt="Корзина" width="20">
-                </li>
-                <li><a href="/account/">Увійти</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h1>Наші контакти</h1>
-        
-        <div class="contact-info"></div>
-            <p><strong>Адреса:</strong> вул. Вигадана, 123, Київ, Україна</p>
-            <p><strong>Телефон:</strong> +380 44 123 4567</p>
-            <p><strong>Email:</strong> info@fastfood.com</p>
+    <nav>
+        <a href="/">
+            <div class="logo">
+                <img src="/assets/Logo.svg" alt="Лого">
+            </div>
+        </a>
+        <div class="nav-center">
+            <a href="/">
+                <div class="nav-item">Головна</div>
+            </a>
+            <a href="/catalog/">
+                <div class="nav-item">Каталог</div>
+            </a>
+            <a href="/about/">
+                <div class="nav-item">Про нас</div>
+            </a>
+            <a href="/contact/">
+                <div class="nav-item active">Контакти</div>
+            </a>
         </div>
+        <div class="nav-right">
+            <a href="/cart/">
+                <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
+            </a>
+            <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
+        </div>
+    </nav>
 
-        <form action="#" method="post">
-            <label for="name">Ім'я:</label><br>
-            <input type="text" id="name" name="name" required><br>
-            
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            
-            <label for="message">Повідомлення:</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br>
-            
-            <button type="submit">Надіслати</button>
-        </form>
+    <main id="contact-page">
+
+        <h1 class="text-primary">Контакти</h1>
+        <p class="sub body-text text-secondary">Як з нами можна зв’язатися</p>
+
+        <section id="form">
+            <h4 class="text-primary">Напишіть нам</h4>
+
+            <form action="/contact/">
+                <div class="form-group">
+                    <label for="name" class="body-text text-primary">Повне ім'я</label>
+                    <input class="input" type="text" id="name" name="name" placeholder="Джон Доу" required>
+                    <p class="error-message body-text-small text-danger hidden" data-msg-for="name">*Має містити мінімум
+                        2 знаки</p>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="body-text text-primary">Електронна адереса</label>
+                    <input class="input" type="email" id="email" name="email" placeholder="name@example.com" required>
+                    <p class="error-message body-text-small text-danger hidden" data-msg-for="email">*Має відповідати
+                        формату</p>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="body-text text-primary">Повідомлення</label>
+                    <textarea class="input" id="message" name="message" placeholder="..." rows="5" required></textarea>
+                    <p class="error-message body-text-small text-danger hidden" data-msg-for="message">*Має містити
+                        мінімум 5 знаків</p>
+                </div>
+                <input type="submit" class="btn btn-primary" value="Відправити">
+            </form>
+        </section>
+
+        <section id="info">
+            <h4 class="text-primary">Або</h4>
+            <p class="body-text-large text-primary">
+                +380 44 123 4567 (8:00 - 17:00)<br>
+                info@fastfood.notjusta.dev<br>
+                вул. Вигадана, 123, Київ, Україна
+            </p>
+        </section>
     </main>
 
-    <!-- Footer: Copyright & ScrollToTop -->
     <footer>
-        <p>&copy; FastFood 2017-2025. Всі права захищені.</p>
-        <a href="#top">↑ До гори</a>
+        <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
+        <a href="#" class="text-link">↑ До гори</a>
     </footer>
 </body>
+
 </html>

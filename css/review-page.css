@@ -1,0 +1,18 @@
+
+h1 {
+    margin: 48px 0 12px;
+}
+
+.sub {
+    margin-bottom: 64px;
+}
+
+.review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 48px;
+}
+
+.review-grid .review {
+    width: calc((100% - 48px * 2) / 3)
+}

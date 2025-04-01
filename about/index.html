@@ -4,39 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastFood • Швидка та смачна доставка</title>
+    <title>FastFood • Каталог товарів</title>
     <link rel="icon" type="image/ico" href="/favicon.ico">
+<!--    <link rel="stylesheet" href="/css/Global.css">-->
+<!--    <link rel="stylesheet" href="/css/about-page.css">-->
 </head>
-
 <body>
-    <header>
-        <!-- Navigation -->
-        <nav>
-            <div class="logo">FastFood</div>
-            <ul class="nav-center">
-                <li><a href="/">Головна</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/about/">Про нас</a></li>
-                <li><a href="/contact/">Контакти</a></li>
-            </ul>
-            <ul class="nav-right">
-                <li><a href="/cart/">
-                        <img src="/icons/cart.svg" alt="Корзина" width="20">
-                </li>
-                <li><a href="/account/">Увійти</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-    
-    </main>
+<nav>
+    <a href="/">
+        <div class="logo">
+            <img src="/assets/Logo.svg" alt="Лого">
+        </div>
+    </a>
+    <div class="nav-center">
+        <a href="/">
+            <div class="nav-item">Головна</div>
+        </a>
+        <a href="/catalog/">
+            <div class="nav-item">Каталог</div>
+        </a>
+        <a href="/about/">
+            <div class="nav-item active">Про нас</div>
+        </a>
+        <a href="/contact/">
+            <div class="nav-item">Контакти</div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <a href="/cart/">
+            <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
+        </a>
+        <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
+    </div>
+</nav>
 
-    <!-- Footer: Copyright & ScrollToTop -->
-    <footer>
-        <p>&copy; FastFood 2017-2025. Всі права захищені.</p>
-        <a href="#top">↑ До гори</a>
-    </footer>
+<main id="about-page">
+    <img src="/assets/Lightbox%20Sign%20Mockup.png" alt="Банер FastFood" class="thumbnail">
+    <h1 class="text-primary">Про нас</h1>
+    <p class="sub body-text text-secondary">Де все почалося, наші досягнення та плани на майбутнє</p>
+
+    <section id="history">
+        <div class="text-n-image">
+            <div>
+                <h2 class="text-primary">Ми та наша історія</h2>
+                <p class="body-text-large text-primary">FastFood було засновано у 2017 році з однією простою, але
+                    амбітною ідеєю – зробити доставку їжі швидкою, доступною та якісною. Ми починали як невеликий
+                    стартап, що працював лише в одному місті, але завдяки довірі наших клієнтів та наполегливій праці
+                    команди нам вдалося вирости в один із провідних сервісів доставки їжі. З самого початку ми прагнули
+                    поєднати найкращі традиції ресторанного сервісу з оперативністю фаст-фуду. Наші кухарі
+                    використовують лише свіжі інгредієнти, а кур’єри доставляють замовлення так швидко, щоб ви могли
+                    насолоджуватися гарячими стравами, ніби вони щойно з кухні.</p>
+            </div>
+            <img src="/assets/History.png" alt="Перший заклад" id="history-img">
+        </div>
+        <div class="text-n-image">
+            <img src="/assets/Kitchen.png" alt="Перший заклад" id="kitchen-img">
+            <p class="body-text-large text-primary">Сьогодні FastFood працює в десятках міст, обслуговуючи тисячі
+                клієнтів щодня. Ми розширюємо нашу географію та
+                вдосконалюємо технології, щоб зробити замовлення ще простішими, а доставку — ще швидшою. <br><br>
+                Наші кухарі – це експерти у своїй справі. Вони щодня готують бургери, піци та суші за авторськими
+                рецептами, використовуючи тільки свіжі продукти. Логістична команда працює над тим, щоб кожне
+                замовлення було зібране та доставлене без затримок, а кур’єри — це наша гордість, адже саме вони
+                роблять усе, щоб ви отримували свої улюблені страви максимально швидко.</p>
+        </div>
+    </section>
+
+    <section id="advantages">
+        <h2 class="text-primary">Наші цінності та переваги</h2>
+        <p class="body-text-large text-primary">Ми віримо, що якість, швидкість і комфорт можуть існувати разом. Саме
+            тому ми будуємо наш сервіс на трьох головних принципах:</p>
+
+        <div id="advantages-grid">
+            <div class="card bg-white">
+                <div class="card-image">
+                    <img src="/assets/icons/Quality.svg" alt="Якість">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">1. Якість без компромісів</h5>
+                    <p class="body-text text-secondary">Ми ретельно відбираємо інгредієнти, працюємо тільки з
+                        перевіреними постачальниками та контролюємо кожен етап приготування. Наші страви відповідають
+                        найвищим стандартам.</p>
+                </div>
+            </div>
+            <div class="card bg-white">
+                <div class="card-image">
+                    <img src="/assets/icons/Speed.svg" alt="Якість">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">2. Максимальна швидкість</h5>
+                    <p class="body-text text-secondary">Час – найцінніший ресурс, і ми це розуміємо. Саме тому ми
+                        оптимізували процеси приготування та доставки так, щоб ваші замовлення прибували швидше, ніж ви
+                        очікуєте.</p>
+                </div>
+            </div>
+            <div class="card bg-white">
+                <div class="card-image">
+                    <img src="/assets/icons/Clients.svg" alt="Якість">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title text-primary">3. Орієнтація на клієнта</h5>
+                    <p class="body-text text-secondary">Кожен відгук, кожне побажання – це можливість для нас стати
+                        кращими. Ми постійно вдосконалюємо наш сервіс, додаємо нові страви до меню та працюємо над
+                        зручністю замовлення.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="body-text-large text-primary">Ми обробляємо понад 10 000 замовлень щомісяця, середній час доставки –
+            35 хвилин, але ми продовжуємо працювати над його скороченням. Найпопулярніша страва серед наших клієнтів –
+            Королівський бургер, який замовляють найчастіше. Ми співпрацюємо з 100+ професійними кухарями та 500+
+            кур'єрами по всій країні, а наш сервіс доступний у 20+ містах, і ми постійно розширюємо географію.</p>
+
+        <div id="to-reviews">
+            <h5 class="text-primary">Маєте сумніви? Прочитайте </h5>
+            <a href="/reviews/" class="btn btn-primary">Відгуки <span>-></span></a>
+        </div>
+    </section>
+
+    <section id="vision">
+        <h2 class="text-primary">Бачення на майбутнє</h2>
+        <p class="body-text-large text-primary">Наша місія – зробити замовлення їжі таким же простим, як дихати. Ми
+            хочемо, щоб ви не витрачали час на приготування, а могли насолоджуватися смачними стравами без зайвих
+            турбот.<br><br> У найближчі роки ми плануємо:</p>
+        <ul class="body-text-large text-primary">
+            <li>Запустити доставку у нових містах та країнах.</li>
+            <li>Впровадити екологічні упаковки, які будуть повністю біорозкладними.</li>
+            <li>Розширити меню та додати більше вегетаріанських і корисних страв.</li>
+            <li>Впровадити персональні рекомендації, які допоможуть кожному клієнту знайти ідеальну страву для себе.
+            </li>
+        </ul><br>
+        <p class="body-text-large text-primary">FastFood – це не просто доставка їжі. Це стиль життя для тих, хто цінує
+            свій час, якість та зручність. Ми завжди готові рухатися вперед, щоб радувати вас ще більше!</p>
+    </section>
+
+    <div id="cta">
+        <h2 class="text-white">Голодний? Замов прямо зараз!</h2>
+        <p class="body-text text-disabled">Ваші улюблені страви вже чекають. Швидкість - наш козир!</p>
+        <a href="/catalog/" class="btn btn-highlight">Перейти до каталогу <span>-></span></a>
+    </div>
+</main>
+
+<footer>
+    <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
+    <a href="#" class="text-link">↑ До гори</a>
+</footer>
+
 </body>
-
 </html>

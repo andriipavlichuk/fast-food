@@ -1,0 +1,66 @@
+img.thumbnail {
+    width: 100%;
+    margin: 48px 0;
+}
+
+h1 {
+    margin-bottom: 12px;
+}
+
+.sub {
+    margin-bottom: 64px;
+}
+
+#history .text-n-image {
+    display: flex;
+    gap: 64px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0;
+}
+
+#history .text-n-image h2 {
+    margin-bottom: 40px;
+}
+
+#history-img {
+    width: 500px;
+    aspect-ratio: 5 / 4;
+    object-fit: contain;
+}
+
+#kitchen-img {
+    width: 600px;
+    aspect-ratio: 6 / 4;
+    object-fit: contain;
+}
+
+#advantages h2 {
+    margin: 64px 0 32px;
+}
+
+#advantages-grid {
+    margin: 48px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 48px;
+}
+
+#advantages-grid > .card {
+    width: calc((100% - 96px) / 3);
+}
+
+#to-reviews {
+    margin: 24px 0 80px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#vision h2 {
+    margin-bottom: 32px;
+}
+
+#cta {
+    margin-top: 48px;
+}

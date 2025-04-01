@@ -6,245 +6,248 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastFood • Швидка та смачна доставка</title>
     <link rel="icon" type="image/ico" href="/favicon.ico">
-    <link rel="stylesheet" href="/Global.css">
-    <link rel="stylesheet" href="/homepage.css">
+<!--    <link rel="stylesheet" href="/css/Global.css">-->
+<!--    <link rel="stylesheet" href="/css/homepage.css">-->
 </head>
 
 <body>
-<nav>
-    <div class="logo">
-        <img src="/assets/Logo.svg" alt="Лого">
-    </div>
-    <div class="nav-center">
+    <nav>
         <a href="/">
-            <div class="nav-item active">Головна</div>
-        </a>
-        <a href="/catalog/">
-            <div class="nav-item">Каталог</div>
-        </a>
-        <a href="/about/">
-            <div class="nav-item">Про нас</div>
-        </a>
-        <a href="/contact/">
-            <div class="nav-item">Контакти</div>
-        </a>
-    </div>
-    <div class="nav-right">
-        <a href="/cart/">
-            <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
-        </a>
-        <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
-    </div>
-</nav>
-
-<main id="homepage">
-    <section id="hero">
-        <div class="hero">
-            <div class="text">
-                <h1 class="text-primary">Доставимо їжу швидше, ніж ви думаєте 😋</h1>
-                <p class="body-text text-secondary">FastFood - це коли смачно, корисно і миттєво! Вам не доведеться
-                    чекати годинами - наші кур’єри вже в дорозі.</p>
-                <button class="btn btn-outline">Гортайте ↓</button>
+            <div class="logo">
+                <img src="/assets/Logo.svg" alt="Лого">
             </div>
-            <img src="/assets/Delivery%20Guy.svg" alt="Кур'єр">
+        </a>
+        <div class="nav-center">
+            <a href="/">
+                <div class="nav-item active">Головна</div>
+            </a>
+            <a href="/catalog/">
+                <div class="nav-item">Каталог</div>
+            </a>
+            <a href="/about/">
+                <div class="nav-item">Про нас</div>
+            </a>
+            <a href="/contact/">
+                <div class="nav-item">Контакти</div>
+            </a>
         </div>
-    </section>
-
-    <section id="catalog">
-        <h2 class="text-primary">Що сьогодні замовлятимите?</h2>
-        <p class="body-text text-secondary">Швидка доставка ваших улюблених страв! Обирайте з меню та насолоджуйтесь
-            смаком.</p>
-        <div class="catalog-grid">
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Королівський бургер</h5>
-                    <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже листя
-                        салату та соус барбекю.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">169₴</h3>
-                        <button class="btn card-btn btn-outline">✓ В кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Філадельфія лайт</h5>
-                    <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо та
-                        рис – ідеальне поєднання.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">219₴</h3>
-                        <button class="btn card-btn btn-outline">✓ В кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product3.jpg" alt="Чікен Бургер">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Чікен Бургер</h5>
-                    <p class="body-text-small text-secondary card-description">Соковита куряча котлета, свіжі овочі та
-                        соус ранч.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">159₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product4.jpg" alt="Дабл Чізбургер">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Дабл Чізбургер</h5>
-                    <p class="body-text-small text-secondary card-description">Подвійна котлета, сир та фірмовий соус
-                        для максимального смаку.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">189₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product5.jpg" alt="Піца Пепероні">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Піца Пепероні</h5>
-                    <p class="body-text-small text-secondary card-description">Тонке тісто, томатний соус, моцарела та
-                        пікантна пепероні.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">219₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product6.jpg" alt="Швидка Маргарита">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Швидка Маргарита</h5>
-                    <p class="body-text-small text-secondary card-description">Тонке тісто, ароматний томатний соус,
-                        моцарела та базилік.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">189₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product7.jpg" alt="Каліфорнія рол">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Каліфорнія рол</h5>
-                    <p class="body-text-small text-secondary card-description">Крабове м'ясо, авокадо, огірок та ікра
-                        тобіко.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">199₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
-            <div class="product-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product8.jpg" alt="Веган Бургер">
-                <div class="card-body">
-                    <h5 class="text-primary card-title">Веган Бургер</h5>
-                    <p class="body-text-small text-secondary card-description">Рослинна котлета, свіжі овочі та
-                        веганський соус.</p>
-                    <div class="card-bottom">
-                        <h3 class="card-price text-primary">149₴</h3>
-                        <button class="btn card-btn btn-highlight">До кошику</button>
-                    </div>
-                </div>
-            </div>
+        <div class="nav-right">
+            <a href="/cart/">
+                <div class="cart full"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
+            </a>
+            <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
         </div>
+    </nav>
 
-        <a href="/catalog/" class="btn btn-primary">Показати увесь каталог <span>-></span></a>
-    </section>
+    <main id="homepage">
+        <section id="hero">
+            <div id="hero-body">
+                <div class="text">
+                    <h1 class="text-primary">Доставимо їжу швидше, ніж ви думаєте 😋</h1>
+                    <p class="body-text text-secondary">FastFood - це коли смачно, корисно і миттєво! Вам не доведеться
+                        чекати годинами - наші кур’єри вже в дорозі.</p>
+                    <button class="btn btn-outline">Гортайте ↓</button>
+                </div>
+                <img src="/assets/Delivery%20Guy.svg" alt="Кур'єр">
+            </div>
+        </section>
 
-    <section id="about">
-        <h2 class="text-primary">Про наш сервіс</h2>
-        <p class="body-text-large text-primary">FastFood – це сервіс доставки, який поєднує швидкість і якість. Ми
-            обираємо тільки найкращі продукти, щоб ви насолоджувалися ідеальним смаком. Наша команда щодня працює над
-            вдосконаленням сервісу, аби ваші замовлення приходили не лише швидко, а й завжди гарячими та смачними. Ми
-            пишаємося тим, що ви обираєте нас знову і знову! У нашому меню – лише найкращі бургери, піца та суші, які
-            готуються з любов’ю та за перевіреними рецептами. Завітайте до FastFood та спробуйте справжню швидку їжу!
-        </p>
-        <a href="/about/" class="btn btn-primary">Дізнайтесь більше <span>-></span></a>
-    </section>
-
-    <section id="reviews">
-        <h2 class="text-primary">Що про нас говорять люди?</h2>
-        <p class="body-text text-secondary">Довіра наших клієнтів – найкраща нагорода. Читайте відгуки та діліться
-            враженнями!</p>
-        <div class="review-grid">
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Oleksandr.jpg" alt="Олександр">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Олександр</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
+        <section id="catalog">
+            <h2 class="text-primary">Що сьогодні замовлятимите?</h2>
+            <p class="body-text text-secondary">Швидка доставка ваших улюблених страв! Обирайте з меню та насолоджуйтесь
+                смаком.</p>
+            <div class="catalog-grid">
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Королівський бургер</h5>
+                        <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже
+                            листя салату та соус барбекю.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">169₴</h3>
+                            <button class="btn card-btn btn-outline">✓ В кошику</button>
                         </div>
                     </div>
                 </div>
-                <p class="body-text text-primary review-text">“Дуже задоволений сервісом! Замовлення прийшло швидко, їжа
-                    була гарячою та смачною”.</p>
-            </div>
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Maryna.jpg" alt="Марина">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Марина</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/StarOutline.svg" alt="Без зірки">
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Філадельфія лайт</h5>
+                        <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо
+                            та рис – ідеальне поєднання.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">219₴</h3>
+                            <button class="btn card-btn btn-outline">✓ В кошику</button>
                         </div>
                     </div>
                 </div>
-                <p class="body-text text-primary review-text">“Хороший сервіс, ввічливий персонал, але було невелике
-                    запізнення. Проте їжа свіжа і смачна. Рекомендую!”.</p>
-            </div>
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Vladyslav.jpg" alt="Владислав">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Владислав</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірки">
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product3.jpg" alt="Чікен Бургер">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Чікен Бургер</h5>
+                        <p class="body-text-small text-secondary card-description">Соковита куряча котлета, свіжі овочі
+                            та соус ранч.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">159₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
                         </div>
                     </div>
                 </div>
-                <p class="body-text text-primary review-text">“Сервіс приємно здивував! Їжа гаряча, доставка швидка.
-                    Користуватимусь й надалі та рекомендуватиму друзям”.</p>
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product4.jpg" alt="Дабл Чізбургер">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Дабл Чізбургер</h5>
+                        <p class="body-text-small text-secondary card-description">Подвійна котлета, сир та фірмовий
+                            соус для максимального смаку.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">189₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product5.jpg" alt="Піца Пепероні">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Піца Пепероні</h5>
+                        <p class="body-text-small text-secondary card-description">Тонке тісто, томатний соус, моцарела
+                            та пікантна пепероні.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">219₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product6.jpg" alt="Швидка Маргарита">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Швидка Маргарита</h5>
+                        <p class="body-text-small text-secondary card-description">Тонке тісто, ароматний томатний соус,
+                            моцарела та базилік.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">189₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product7.jpg" alt="Каліфорнія рол">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Каліфорнія рол</h5>
+                        <p class="body-text-small text-secondary card-description">Крабове м'ясо, авокадо, огірок та
+                            ікра тобіко.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">199₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card bg-white">
+                    <span class="badge bg-highlight text-white">ТОП</span>
+                    <img src="/assets/products/Product8.jpg" alt="Веган Бургер">
+                    <div class="card-body">
+                        <h5 class="text-primary card-title">Веган Бургер</h5>
+                        <p class="body-text-small text-secondary card-description">Рослинна котлета, свіжі овочі та
+                            веганський соус.</p>
+                        <div class="card-bottom">
+                            <h3 class="card-price text-primary">149₴</h3>
+                            <button class="btn card-btn btn-highlight">До кошику</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="cta">
-            <h2 class="text-white">Голодний? Замов прямо зараз!</h2>
-            <p class="body-text text-disabled">Ваші улюблені страви вже чекають. Швидкість - наш козир!</p>
-            <a href="/catalog/" class="btn btn-highlight">Перейти до каталогу <span>-></span></a>
-        </div>
-    </section>
+            <a href="/catalog/" class="btn btn-primary">Показати увесь каталог <span>-></span></a>
+        </section>
+
+        <section id="about">
+            <h2 class="text-primary">Про наш сервіс</h2>
+            <p class="body-text-large text-primary">FastFood – це сервіс доставки, який поєднує швидкість і якість. Ми
+                обираємо тільки найкращі продукти, щоб ви насолоджувалися ідеальним смаком. Наша команда щодня працює
+                над вдосконаленням сервісу, аби ваші замовлення приходили не лише швидко, а й завжди гарячими та
+                смачними. Ми пишаємося тим, що ви обираєте нас знову і знову! У нашому меню – лише найкращі бургери,
+                піца та суші, які готуються з любов’ю та за перевіреними рецептами. Завітайте до FastFood та спробуйте
+                справжню швидку їжу!
+            </p>
+            <a href="/about/" class="btn btn-primary">Дізнайтесь більше <span>-></span></a>
+        </section>
+
+        <section id="reviews">
+            <h2 class="text-primary">Що про нас говорять люди?</h2>
+            <p class="body-text text-secondary">Довіра наших клієнтів – найкраща нагорода. Читайте відгуки та діліться
+                враженнями!</p>
+            <div id="review-grid">
+                <div class="review bg-white">
+                    <div class="review-author">
+                        <img src="/assets/avatars/Oleksandr.jpg" alt="Олександр">
+                        <div class="right">
+                            <h6 class="text-primary review-author-name">Олександр</h6>
+                            <div class="review-rating">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="body-text text-primary review-text">“Дуже задоволений сервісом! Замовлення прийшло швидко,
+                        їжа була гарячою та смачною”.</p>
+                </div>
+                <div class="review bg-white">
+                    <div class="review-author">
+                        <img src="/assets/avatars/Maryna.jpg" alt="Марина">
+                        <div class="right">
+                            <h6 class="text-primary review-author-name">Марина</h6>
+                            <div class="review-rating">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/StarOutline.svg" alt="Без зірки">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="body-text text-primary review-text">“Хороший сервіс, ввічливий персонал, але було невелике
+                        запізнення. Проте їжа свіжа і смачна. Рекомендую!”.</p>
+                </div>
+                <div class="review bg-white">
+                    <div class="review-author">
+                        <img src="/assets/avatars/Vladyslav.jpg" alt="Владислав">
+                        <div class="right">
+                            <h6 class="text-primary review-author-name">Владислав</h6>
+                            <div class="review-rating">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірка">
+                                <img src="/assets/icons/Star.svg" alt="Зірки">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="body-text text-primary review-text">“Сервіс приємно здивував! Їжа гаряча, доставка швидка.
+                        Користуватимусь й надалі та рекомендуватиму друзям”.</p>
+                </div>
+            </div>
+
+            <div id="cta">
+                <h2 class="text-white">Голодний? Замов прямо зараз!</h2>
+                <p class="body-text text-disabled">Ваші улюблені страви вже чекають. Швидкість - наш козир!</p>
+                <a href="/catalog/" class="btn btn-highlight">Перейти до каталогу <span>-></span></a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
         <a href="#" class="text-link">↑ До гори</a>
     </footer>
-</main>
 
 </body>
 

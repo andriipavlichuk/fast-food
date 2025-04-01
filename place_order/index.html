@@ -4,39 +4,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastFood • Швидка та смачна доставка</title>
+    <title>FastFood • Кошик</title>
     <link rel="icon" type="image/ico" href="/favicon.ico">
+<!--    <link rel="stylesheet" href="/css/Global.css">-->
+<!--    <link rel="stylesheet" href="/css/place-order-page.css">-->
 </head>
 
 <body>
-    <header>
-        <!-- Navigation -->
-        <nav>
-            <div class="logo">FastFood</div>
-            <ul class="nav-center">
-                <li><a href="/">Головна</a></li>
-                <li><a href="/catalog/">Каталог</a></li>
-                <li><a href="/about/">Про нас</a></li>
-                <li><a href="/contact/">Контакти</a></li>
-            </ul>
-            <ul class="nav-right">
-                <li><a href="/cart/">
-                        <img src="/icons/cart.svg" alt="Корзина" width="20">
-                </li>
-                <li><a href="/account/">Увійти</a></li>
-            </ul>
-        </nav>
-    </header>
+<main id="place-order-page">
+    <a href="/cart/" class="btn btn-outline"><span><-</span>Назад</a>
 
-    <main>
-    
-    </main>
+    <h1 class="text-primary">Зробити замовлення</h1>
 
-    <!-- Footer: Copyright & ScrollToTop -->
-    <footer>
-        <p>&copy; FastFood 2017-2025. Всі права захищені.</p>
-        <a href="#top">↑ До гори</a>
-    </footer>
+    <div id="place-order-form">
+        <form action="/place_order/">
+            <h3 id="info" class="text-primary">Інформація про отримувача</h3>
+
+            <div class="form-group">
+                <label for="name" class="body-text text-primary">Повне ім'я отримувача</label>
+                <input class="input" type="text" id="name" name="name" placeholder="Джон Доу" required>
+                <p class="error-message body-text-small text-danger hidden" data-msg-for="name">*Має містити мінімум
+                    2 знаки</p>
+            </div>
+            <div class="form-group">
+                <label for="address" class="body-text text-primary">Адерса отримувача</label>
+                <input class="input" type="text" id="address" name="address"
+                       placeholder="Місто Вінниця, вулиця Приклад, 12, 3 поверх" required>
+                <p class="error-message body-text-small text-danger hidden" data-msg-for="address">*Має містити мінімум
+                    20 знаків</p>
+            </div>
+            <div class="form-group">
+                <label for="email" class="body-text text-primary">Електронна адереса</label>
+                <input class="input" type="email" id="email" name="email" placeholder="name@example.com" required>
+                <p class="error-message body-text-small text-danger hidden" data-msg-for="email">*Має відповідати
+                    формату</p>
+            </div>
+            <div class="form-group">
+                <label for="comment" class="body-text text-primary">Коментар (опціонально)</label>
+                <input class="input" type="text" id="comment" name="comment" placeholder="...">
+            </div>
+
+            <h3 id="payment" class="text-primary">Оплата</h3>
+
+            <div class="form-group">
+                <label for="card-number" class="body-text text-primary">Номер картки</label>
+                <input class="input" type="number" id="card-number" name="card-number" placeholder="1111 2222 3333 4444"
+                       required>
+                <p class="error-message body-text-small text-danger hidden" data-msg-for="card-number">*Має містити 16
+                    цифр</p>
+            </div>
+            <div id="card-info">
+                <div class="form-group">
+                    <label for="card-cvv" class="body-text text-primary">CVV код</label>
+                    <input class="input" type="password" id="card-cvv" name="card-cvv" placeholder="***" required>
+                    <p class="error-message body-text-small text-danger hidden" data-msg-for="card-cvv">*Має містити 3
+                        цифр</p>
+                </div>
+                <div class="form-group">
+                    <label for="card-exp" class="body-text text-primary">Термін придатності</label>
+                    <input class="input" type="text" id="card-exp" name="card-exp" placeholder="ММ/РР" required>
+                    <p class="error-message body-text-small text-danger hidden" data-msg-for="card-exp">*Має містити
+                        дату у форматі мм/рр</p>
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-highlight" value="Підтвердити замовлення">
+        </form>
+
+        <div id="receipt">
+            <table>
+                <tr>
+                    <th colspan="2"><h3 class="text-white">Платіж</h3></th>
+                </tr>
+                <tr>
+                    <td class="body-text text-background">Номер замовлення</td>
+                    <td class="body-text text-background text-to-right">123456</td>
+                </tr>
+                <tr>
+                    <td class="body-text text-background">Вартість продуктів</td>
+                    <td class="body-text text-background text-to-right">629₴</td>
+                </tr>
+                <tr>
+                    <td class="body-text text-background">Вартість доставки</td>
+                    <td class="body-text text-background text-to-right">47₴</td>
+                </tr>
+            </table>
+
+            <div class="horizontal-rule"></div>
+
+            <h3 class="text-white">Усього: 676₴</h3>
+        </div>
+    </div>
+
+    <h2 class="text-primary">Ваше замовлення</h2>
+
+    <div id="items">
+        <div class="in-cart-card bg-white">
+            <span class="badge bg-highlight text-white">ТОП</span>
+            <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
+            <div class="card-body">
+                <div class="card-info">
+                    <h5 class="text-primary card-title">Королівський бургер</h5>
+                    <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже
+                        листя салату та соус барбекю.</p>
+                    <h3 class="card-price text-primary">169₴</h3>
+                </div>
+                <div class="quantity">
+                    <p class="text-primary body-text-large">1x</p>
+                </div>
+            </div>
+        </div>
+        <div class="in-cart-card bg-white">
+            <span class="badge bg-highlight text-white">ТОП</span>
+            <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
+            <div class="card-body">
+                <div class="card-info">
+                    <h5 class="text-primary card-title">Філадельфія лайт</h5>
+                    <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо
+                        та рис – ідеальне поєднання.</p>
+                    <h3 class="card-price text-primary">219₴</h3>
+                </div>
+                <div class="quantity">
+                    <p class="text-primary body-text-large">1x</p>
+                </div>
+            </div>
+        </div>
+        <div class="in-cart-card bg-white">
+            <img src="/assets/products/Product9.jpg" alt="Чотири сири">
+            <div class="card-body">
+                <div class="card-info">
+                    <h5 class="text-primary card-title">Чотири сири</h5>
+                    <p class="body-text-small text-secondary card-description">Моцарела, горгонзола, пармезан і
+                        чеддер на хрусткому тісті.</p>
+                    <h3 class="card-price text-primary">239₴</h3>
+                </div>
+                <div class="quantity">
+                    <p class="text-primary body-text-large">1x</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
+    <a href="#" class="text-link">↑ До гори</a>
+</footer>
 </body>
 
 </html>

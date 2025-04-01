@@ -1,0 +1,25 @@
+h1 {
+    margin: 96px 0 12px;
+}
+
+.sub {
+    margin-bottom: 36px;
+}
+
+#filters {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+#catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px 24px;
+    margin-bottom: 48px;
+}
+
+#catalog-grid .product-card {
+    width: calc((100% - 24px * 3) / 4)
+}

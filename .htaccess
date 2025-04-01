@@ -1,0 +1,4 @@
+ErrorDocument 404 /404/
+RewriteEngine On
+RewriteCond %{REQUEST_URI} ^/get$
+RewriteRule ^.*$ /404/ [R=404,L]

@@ -1,17 +1,17 @@
 /* == Герой == */
 
-#hero .hero {
+#hero-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 48px 0;
 }
 
-#hero .hero .text {
+#hero .text {
     width: 550px;
 }
 
-#hero .hero img {
+#hero img {
     width: 384px;
 }
 
@@ -64,35 +64,13 @@
     margin-bottom: 48px;
 }
 
-#reviews .review-grid {
+#review-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 48px;
     margin-bottom: 48px;
 }
 
-#reviews .review-grid .review {
+#review-grid .review {
     width: calc((100% - 48px * 2) / 3)
-}
-
-/* == Заклик до дії == */
-
-.cta {
-    width: 100%;
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 1.5rem;
-    background: linear-gradient(rgba(var(--primary), .95), rgba(var(--primary), .95)),
-        url("/assets/CTA Background.png");
-}
-
-.cta h2 {
-    margin-bottom: 12px;
-}
-
-.cta p {
-    margin-bottom: 24px;
 }
