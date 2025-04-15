@@ -82,74 +82,41 @@
                 </tr>
                 <tr>
                     <td class="body-text text-background">Вартість продуктів</td>
-                    <td class="body-text text-background text-to-right">629₴</td>
+                    <td id="items-cost" class="body-text text-background text-to-right">0₴</td>
                 </tr>
                 <tr>
                     <td class="body-text text-background">Вартість доставки</td>
-                    <td class="body-text text-background text-to-right">47₴</td>
+                    <td id="delivery-cost" class="body-text text-background text-to-right">0₴</td>
                 </tr>
             </table>
 
             <div class="horizontal-rule"></div>
 
-            <h3 class="text-white">Усього: 676₴</h3>
+            <h3 id="total" class="text-white">Усього: 0₴</h3>
         </div>
     </div>
 
     <h2 class="text-primary">Ваше замовлення</h2>
 
-    <div id="items">
-        <div class="in-cart-card bg-white">
-            <span class="badge bg-highlight text-white">ТОП</span>
-            <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Королівський бургер</h5>
-                    <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже
-                        листя салату та соус барбекю.</p>
-                    <h3 class="card-price text-primary">169₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-        <div class="in-cart-card bg-white">
-            <span class="badge bg-highlight text-white">ТОП</span>
-            <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Філадельфія лайт</h5>
-                    <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо
-                        та рис – ідеальне поєднання.</p>
-                    <h3 class="card-price text-primary">219₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-        <div class="in-cart-card bg-white">
-            <img src="/assets/products/Product9.jpg" alt="Чотири сири">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Чотири сири</h5>
-                    <p class="body-text-small text-secondary card-description">Моцарела, горгонзола, пармезан і
-                        чеддер на хрусткому тісті.</p>
-                    <h3 class="card-price text-primary">239₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="items"></div>
 </main>
 
 <footer>
     <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
     <a href="#" class="text-link">↑ До гори</a>
 </footer>
-</body>
 
+<script src="/js/catalog-cart.js"></script>
+<script>
+    const grid = document.getElementById('items');
+
+    const event = getOrderItems(grid);
+    const itemsCost = event.total;
+    const deliveryCost = Math.floor(Math.random() * 61) + 20;
+
+    document.getElementById("items-cost").innerText = `${itemsCost}₴`;
+    document.getElementById("delivery-cost").innerText = `${deliveryCost}₴`;
+    document.getElementById("total").innerText = `Усього: ${itemsCost + deliveryCost}₴`;
+</script>
+</body>
 </html>

@@ -11,131 +11,106 @@
 </head>
 
 <body>
-    <nav>
+<nav>
+    <a href="/">
+        <div class="logo">
+            <img src="/assets/Logo.svg" alt="Лого">
+        </div>
+    </a>
+    <div class="nav-center">
         <a href="/">
-            <div class="logo">
-                <img src="/assets/Logo.svg" alt="Лого">
+            <div class="nav-item">Головна</div>
+        </a>
+        <a href="/catalog/">
+            <div class="nav-item">Каталог</div>
+        </a>
+        <a href="/about/">
+            <div class="nav-item">Про нас</div>
+        </a>
+        <a href="/contact/">
+            <div class="nav-item">Контакти</div>
+        </a>
+    </div>
+    <div class="nav-right">
+        <a href="/cart/">
+            <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
+        </a>
+        <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
+    </div>
+</nav>
+
+<main id="cart-page">
+
+    <h1 class="text-primary">Кошик</h1>
+    <p id="main-sub" class="sub body-text text-secondary">Немає товарів у кошику.</p>
+    <a id="to-catalog" href="/catalog/" class="btn btn-primary">До каталогу <span>-></span></a>
+
+    <div id="items"></div>
+
+    <div id="place-order">
+        <h4 class="text-primary">Сума: 629₴</h4>
+        <a href="/place_order/" class="btn btn-primary">Замовити <span>-></span></a>
+    </div>
+
+    <h2 class="text-primary">Активні замовлення</h2>
+    <p class="body-text text-secondary">Немає активних замовлень</p>
+
+    <div id="active-orders">
+        <a href="/order/?id=123456">
+            <div class="order-card bg-white">
+                <h4 class="text-primary order-number">Замовлення №123456</h4>
+                <div class="order-details">
+                    <p class="body-text-small text-secondary">17.03.25 09:15</p>
+                    <p class="body-text-small text-secondary">•</p>
+                    <p class="body-text-small text-secondary">Доставити до вулиці Артура Мирного, 79</p>
+                </div>
+                <div class="order-stage">
+                    <div class="order-progress">
+                        <div class="stage-circle active"></div>
+                        <div class="stage-circle active"></div>
+                        <div class="stage-circle active"></div>
+                        <div class="stage-circle active"></div>
+                        <div class="stage-circle"></div>
+                        <div class="order-progress-bar"></div>
+                    </div>
+                    <p class="body-text text-primary">Замовлення прямує до вас</p>
+                </div>
             </div>
         </a>
-        <div class="nav-center">
-            <a href="/">
-                <div class="nav-item">Головна</div>
-            </a>
-            <a href="/catalog/">
-                <div class="nav-item">Каталог</div>
-            </a>
-            <a href="/about/">
-                <div class="nav-item">Про нас</div>
-            </a>
-            <a href="/contact/">
-                <div class="nav-item">Контакти</div>
-            </a>
-        </div>
-        <div class="nav-right">
-            <a href="/cart/">
-                <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
-            </a>
-            <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
-        </div>
-    </nav>
+    </div>
 
-    <main id="cart-page">
+</main>
 
-        <h1 class="text-primary">Кошик</h1>
-         <p class="sub body-text text-secondary">Немає товарів у кошику.</p>
-         <a href="/catalog/" class="btn btn-primary">До каталогу <span>-></span></a>
+<footer>
+    <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
+    <a href="#" class="text-link">↑ До гори</a>
+</footer>
 
-        <div id="items">
-            <div class="in-cart-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
-                <div class="card-body">
-                    <div class="card-info">
-                        <h5 class="text-primary card-title">Королівський бургер</h5>
-                        <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже
-                            листя салату та соус барбекю.</p>
-                        <h3 class="card-price text-primary">169₴</h3>
-                    </div>
-                    <div class="quantity">
-                        <button class="btn btn-primary">-</button>
-                        <input type="number" value="1">
-                        <button class="btn btn-primary">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="in-cart-card bg-white">
-                <span class="badge bg-highlight text-white">ТОП</span>
-                <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
-                <div class="card-body">
-                    <div class="card-info">
-                        <h5 class="text-primary card-title">Філадельфія лайт</h5>
-                        <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо
-                            та рис – ідеальне поєднання.</p>
-                        <h3 class="card-price text-primary">219₴</h3>
-                    </div>
-                    <div class="quantity">
-                        <button class="btn btn-primary">-</button>
-                        <input type="number" value="1">
-                        <button class="btn btn-primary">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="in-cart-card bg-white">
-                <img src="/assets/products/Product9.jpg" alt="Чотири сири">
-                <div class="card-body">
-                    <div class="card-info">
-                        <h5 class="text-primary card-title">Чотири сири</h5>
-                        <p class="body-text-small text-secondary card-description">Моцарела, горгонзола, пармезан і
-                            чеддер на хрусткому тісті.</p>
-                        <h3 class="card-price text-primary">239₴</h3>
-                    </div>
-                    <div class="quantity">
-                        <button class="btn btn-primary">-</button>
-                        <input type="number" value="1">
-                        <button class="btn btn-primary">+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+<script src="/js/catalog-cart.js"></script>
+<script>
+    const grid = document.getElementById('items');
+    const placeOrder = document.getElementById('place-order');
+    const mainSub = document.getElementById('main-sub');
+    const toCatalog = document.getElementById('to-catalog');
 
-        <div id="place-order">
-            <h4 class="text-primary">Сума: 629₴</h4>
-            <a href="/place_order/" class="btn btn-primary">Замовити <span>-></span></a>
-        </div>
+    function updateAppearance(e) {
+        if (e.isEmpty) {
+            placeOrder.classList.add('hidden');
+            mainSub.classList.remove('hidden');
+            toCatalog.classList.remove('hidden');
+        } else {
+            placeOrder.classList.remove('hidden');
+            mainSub.classList.add('hidden');
+            toCatalog.classList.add('hidden');
+            document.querySelector("#place-order h4").innerText = `Сума: ${e.total}₴`;
+        }
+    }
 
-        <h2 class="text-primary">Активні замовлення</h2>
-        <p class="body-text text-secondary">Немає активних замовлень</p>
+    cart.addUpdateListener(function (event) {
+        updateAppearance(event);
+    })
 
-        <div id="active-orders">
-            <a href="/order/?id=123456">
-                <div class="order-card bg-white">
-                    <h4 class="text-primary order-number">Замовлення №123456</h4>
-                    <div class="order-details">
-                        <p class="body-text-small text-secondary">17.03.25 09:15</p>
-                        <p class="body-text-small text-secondary">•</p>
-                        <p class="body-text-small text-secondary">Доставити до вулиці Артура Мирного, 79</p>
-                    </div>
-                    <div class="order-stage">
-                        <div class="order-progress">
-                            <div class="stage-circle active"></div>
-                            <div class="stage-circle active"></div>
-                            <div class="stage-circle active"></div>
-                            <div class="stage-circle active"></div>
-                            <div class="stage-circle"></div>
-                            <div class="order-progress-bar"></div>
-                        </div>
-                        <p class="body-text text-primary">Замовлення прямує до вас</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-    </main>
-
-    <footer>
-        <p class="copyright text-primary">&copy; FastFood 2017-2025. Всі права захищені.</p>
-        <a href="#" class="text-link">↑ До гори</a>
-    </footer>
+    updateAppearance(getCartItems(grid))
+</script>
 </body>
-
 </html>
