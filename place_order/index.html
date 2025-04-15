@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <td class="body-text text-background">Номер замовлення</td>
-                    <td class="body-text text-background text-to-right">123456</td>
+                    <td id="order-id" class="body-text text-background text-to-right">123456</td>
                 </tr>
                 <tr>
                     <td class="body-text text-background">Вартість продуктів</td>
@@ -106,17 +106,29 @@
     <a href="#" class="text-link">↑ До гори</a>
 </footer>
 
-<script src="/js/catalog-cart.js"></script>
+<script src="/js/database.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/order.js"></script>
+<script src="/js/script.js"></script>
 <script>
+    const order = new Order();
     const grid = document.getElementById('items');
 
-    const event = getOrderItems(grid);
-    const itemsCost = event.total;
-    const deliveryCost = Math.floor(Math.random() * 61) + 20;
+    getOrderItems(grid);
 
-    document.getElementById("items-cost").innerText = `${itemsCost}₴`;
-    document.getElementById("delivery-cost").innerText = `${deliveryCost}₴`;
-    document.getElementById("total").innerText = `Усього: ${itemsCost + deliveryCost}₴`;
+    if (order.load("pending_order")) {
+        order.updateCart(cart.cart, PRODUCT_TABLE);
+    } else {
+        order.create(cart.cart, PRODUCT_TABLE, Math.floor(Math.random() * 61) + 20);
+    }
+
+    // Saving changes
+    order.save("pending_order");
+
+    document.getElementById('order-id').innerHTML = `${order.id}`;
+    document.getElementById("items-cost").innerText = `${order.total}₴`;
+    document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
+    document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
 </script>
 </body>
 </html>
