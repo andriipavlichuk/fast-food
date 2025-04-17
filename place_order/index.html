@@ -17,14 +17,14 @@
     <h1 class="text-primary">Зробити замовлення</h1>
 
     <div id="place-order-form">
-        <form action="/place_order/">
+        <form action="/place_order/" novalidate method="POST">
             <h3 id="info" class="text-primary">Інформація про отримувача</h3>
 
             <div class="form-group">
                 <label for="name" class="body-text text-primary">Повне ім'я отримувача</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Джон Доу" required>
                 <p class="error-message body-text-small text-danger hidden" data-msg-for="name">*Має містити мінімум
-                    2 знаки</p>
+                    5 знаків</p>
             </div>
             <div class="form-group">
                 <label for="address" class="body-text text-primary">Адерса отримувача</label>
@@ -109,12 +109,16 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/order.js"></script>
+<script src="/js/form-validation.js"></script>
 <script src="/js/script.js"></script>
 <script>
     const order = new Order();
     const grid = document.getElementById('items');
 
-    getOrderItems(grid);
+    const res = getOrderItems(grid);
+    if (res.isEmpty) {
+        window.location.href = '/cart';
+    }
 
     if (order.load("pending_order")) {
         order.updateCart(cart.cart, PRODUCT_TABLE);
