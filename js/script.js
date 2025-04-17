@@ -65,7 +65,7 @@ function createInCartCard(id, product, editable = true) {
                     <input type="number" value="${quantity}">
                     <button class="btn btn-primary increment">+</button>
                     ` : `<p class="text-primary body-text-large">${quantity}x</p>`
-                    }
+    }
                 </div>
             </div>
         </div>
@@ -75,8 +75,10 @@ function createInCartCard(id, product, editable = true) {
     wrapper.innerHTML = cardHTML.trim();
     const card = wrapper.firstChild;
     if (editable) {
-        card.querySelector(".increment").onclick = () => increaseQuantity(id);
-        card.querySelector(".decrement").onclick = () => decreaseQuantity(id);
+        const quantity_input = card.querySelector("input[type='number']");
+        card.querySelector(".increment").onclick = () => setQuantity(id, cart.getQuantity(id) + 1);
+        card.querySelector(".decrement").onclick = () => setQuantity(id, cart.getQuantity(id) - 1);
+        quantity_input.addEventListener("focusout", () => setQuantity(id, quantity_input.value))
     }
     return card;
 }
@@ -142,30 +144,20 @@ function removeFromCart(id) {
     button.onclick = addToCart;
 }
 
-function updateQuantity(id, quantity) {
-    const input = document.querySelector(`[data-product-id="${id}"] input[type="number"]`);
-    cart.setQuantity(id, quantity);
-    if (quantity > 0) {
-        input.value = quantity;
-    }
-}
-
-function increaseQuantity(id) {
-    updateQuantity(id, cart.getQuantity(id) + 1);
-}
-
-function decreaseQuantity(id) {
-    let newQuantity = cart.getQuantity(id) - 1;
-
-    if (newQuantity <= 0) {
+function setQuantity(id, quantity) {
+    if (quantity <= 0) {
         const confirmRemoval = confirm("Ви впевнені, що хочете прибрати товар з кошика?");
 
         if (confirmRemoval) {
             document.querySelector(`[data-product-id="${id}"]`).remove();
         } else {
-            newQuantity = 1;
+            quantity = 1;
         }
     }
 
-    updateQuantity(id, newQuantity);
+    const input = document.querySelector(`[data-product-id="${id}"] input[type="number"]`);
+    cart.setQuantity(id, quantity);
+    if (quantity > 0) {
+        input.value = quantity;
+    }
 }

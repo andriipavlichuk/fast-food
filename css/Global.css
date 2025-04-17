@@ -145,6 +145,16 @@ a:not(.btn):hover {
     display: none !important;
 }
 
+[data-msg-for] {
+    transition: opacity 0.25s ease;
+}
+
+[data-msg-for].hidden {
+    display: block !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
 /* == Кнопки == */
 
 .btn {
@@ -594,13 +604,14 @@ nav .nav-right {
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 1rem;
-    outline: none;
+    /*outline: none;*/
     border: none;
     padding: 0.75rem 1.25rem;
     border-radius: 4px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
     resize: none;
-    transition: 0.1s ease;
+    transition: 0.25s ease;
+    outline: 1px solid #fff;
 }
 
 input::placeholder {

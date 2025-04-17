@@ -1,31 +1,35 @@
+const PATTERNS = {
+    "name": /^.{5,}$/,
+    "email": /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+    "address": /^.{20,}$/,
+    "comment": /^.{10,}$/,
+    "card-number": /^(?:\d{4}[- ]){3}\d{4}$/,
+    "card-cvv": /^\d{3}$/,
+    "card-exp": /^(0[1-9]|1[0-2])\/\d{2}$/,
+};
+
 document.addEventListener('DOMContentLoaded', () => {
-    const cardNumberInput = document.getElementById('card-number');
-    const cardExpInput = document.getElementById('card-exp');
-
-    // Format card number as "1111 2222 3333 4444"
-    cardNumberInput.addEventListener('input', () => {
-        let value = cardNumberInput.value.replace(/\D/g, ''); // Remove non-digits
-        value = value.match(/.{1,4}/g)?.join(' ') || value; // Add spaces every 4 digits
-        cardNumberInput.value = value;
-    });
-
-    // Format expiration date as "MM/YY"
-    cardExpInput.addEventListener('input', () => {
-        let value = cardExpInput.value.replace(/\D/g, ''); // Remove non-digits
-        if (value.length >= 2) {
-            value = value.slice(0, 2) + '/' + value.slice(2, 4); // Add "/" after MM
-        }
-        cardExpInput.value = value.slice(0, 5); // Limit to "MM/YY"
-    });
 
     document.querySelector('form').addEventListener('submit', function (event) {
         event.preventDefault();
         if (validateInputs()) alert("Далі нізя");
     });
 
-    document.querySelectorAll('[data-pattern]').forEach(input => {
+    document.querySelectorAll('input').forEach(input => {
         input.addEventListener('focusout', () => validateInput(input));
     });
+
+    function validateInput(input) {
+        if (!PATTERNS[input.name] || !input.required) {
+            return true;
+        }
+
+        const is_valid = PATTERNS[input.name].test(input.value.trim());
+        input.classList.toggle("outline-danger", !is_valid);
+        document.querySelector(`[data-msg-for="${input.name}"]`)?.classList.toggle("hidden", is_valid);
+
+        return is_valid;
+    }
 
     function validateInputs() {
         return Array.from(document.querySelectorAll('[data-pattern]'))
@@ -33,11 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .every(isValid => isValid);
     }
 
-    function validateInput(input) {
-        const pattern = new RegExp(input.dataset.pattern);
-        const errorMessage = document.querySelector(`[data-msg-for="${input.id}"]`);
-        const isValid = pattern.test(input.value.trim());
-        errorMessage.classList.toggle('hidden', isValid);
-        return isValid;
-    }
+    document.querySelector("form")?.addEventListener('input', function (event) {
+        validateInput(event.target)
+    });
 })
