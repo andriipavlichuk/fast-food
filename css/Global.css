@@ -514,7 +514,6 @@ nav .nav-right {
 /* == Картка з інформацією про замовлення == */
 
 .order-card {
-    height: 172px;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
     position: relative;
