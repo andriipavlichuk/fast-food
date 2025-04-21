@@ -55,29 +55,7 @@
     <h2 class="text-primary">Активні замовлення</h2>
     <p class="body-text text-secondary">Немає активних замовлень</p>
 
-    <div id="active-orders">
-        <a href="/order/?id=123456">
-            <div class="order-card bg-white">
-                <h4 class="text-primary order-number">Замовлення №123456</h4>
-                <div class="order-details">
-                    <p class="body-text-small text-secondary">17.03.25 09:15</p>
-                    <p class="body-text-small text-secondary">•</p>
-                    <p class="body-text-small text-secondary">Доставити до вулиці Артура Мирного, 79</p>
-                </div>
-                <div class="order-stage">
-                    <div class="order-progress">
-                        <div class="stage-circle active"></div>
-                        <div class="stage-circle active"></div>
-                        <div class="stage-circle active"></div>
-                        <div class="stage-circle active"></div>
-                        <div class="stage-circle"></div>
-                        <div class="order-progress-bar"></div>
-                    </div>
-                    <p class="body-text text-primary">Замовлення прямує до вас</p>
-                </div>
-            </div>
-        </a>
-    </div>
+    <div id="active-orders"></div>
 
 </main>
 
@@ -88,6 +66,8 @@
 
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
+<script src="/js/order.js"></script>
+<script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
 <script>
     const grid = document.getElementById('items');
@@ -113,6 +93,23 @@
     })
 
     updateAppearance(getCartItems(grid))
+
+    const active_orders = localStorage.getItem('active_orders');
+    if (active_orders) {
+        const container = document.getElementById('active-orders');
+
+        JSON.parse(active_orders).forEach(order_entries => {
+            const active_order = new Order();
+            active_order.fromArray(order_entries);
+
+
+
+            const link = document.createElement('a');
+            link.href = `/order/?id=${active_order.id}`;
+            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
+            container.appendChild(link);
+        });
+    }
 </script>
 </body>
 </html>

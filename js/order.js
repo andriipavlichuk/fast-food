@@ -4,6 +4,16 @@ class Order {
         this.delivery_cost = 0;
         this.items = {};
         this.total = 0;
+
+        this.receiver = {
+            name: "",
+            email: "",
+            address: "",
+            card_l4d: "",
+        }
+
+        this.comment = "";
+        this.placed_at = 0;
     }
 
     create(cart, database, delivery_cost) {
@@ -38,7 +48,7 @@ class Order {
     }
 
     updateCart(cart, database) {
-        this.items = [];
+        this.items = {};
         this.total = 0;
 
         Object.keys(cart).forEach((item) => {
@@ -52,8 +62,61 @@ class Order {
         })
     }
 
-    // Remove matching order from local storage
-    // remove() {
-    //
-    // }
+    setReceiversInfo(name, email, address, card_l4d, comment = "") {
+        this.receiver.name = name;
+        this.receiver.email = email;
+        this.receiver.address = address;
+        this.receiver.card_l4d = card_l4d;
+        this.comment = comment;
+    }
+
+    toString() {
+        return JSON.stringify([
+            this.id,
+            this.delivery_cost,
+            this.items,
+            this.total,
+            this.receiver.name,
+            this.receiver.email,
+            this.receiver.address,
+            this.receiver.card_l4d,
+            this.comment,
+            this.placed_at
+        ]);
+    }
+
+    fromArray (arr) {
+        const [
+            id,
+            delivery_cost,
+            items,
+            total,
+            name,
+            email,
+            address,
+            card_l4d,
+            comment,
+            placed_at
+        ] = arr;
+
+        this.id = id;
+        this.delivery_cost = delivery_cost;
+        this.items = items;
+        this.total = total;
+        this.receiver.name = name;
+        this.receiver.email = email;
+        this.receiver.address = address;
+        this.receiver.card_l4d = card_l4d;
+        this.comment = comment;
+        this.placed_at = placed_at;
+    }
+
+    fromString(str) {
+        this.fromArray(JSON.parse(str));
+    }
+
+    place() {
+        this.placed_at = new Date().getTime();
+        return this.toString();
+    }
 }

@@ -33,7 +33,3 @@ h2 {
     flex-direction: column;
     gap: 16px;
 }
-
-.order-card .order-progress-bar {
-    width: calc(100% * 3 / 4);
-}
