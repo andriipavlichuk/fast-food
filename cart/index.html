@@ -48,12 +48,12 @@
     <div id="items"></div>
 
     <div id="place-order">
-        <h4 class="text-primary">Сума: 629₴</h4>
+        <h4 class="text-primary">Сума: 0₴</h4>
         <a href="/place_order/" class="btn btn-primary">Замовити <span>-></span></a>
     </div>
 
     <h2 class="text-primary">Активні замовлення</h2>
-    <p class="body-text text-secondary">Немає активних замовлень</p>
+    <p class="body-text text-secondary" id="no-active-orders">Немає активних замовлень</p>
 
     <div id="active-orders"></div>
 
@@ -96,17 +96,16 @@
 
     const active_orders = localStorage.getItem('active_orders');
     if (active_orders) {
+        document.getElementById("no-active-orders").classList.add("hidden");
         const container = document.getElementById('active-orders');
 
         JSON.parse(active_orders).forEach(order_entries => {
             const active_order = new Order();
             active_order.fromArray(order_entries);
 
-
-
             const link = document.createElement('a');
             link.href = `/order/?id=${active_order.id}`;
-            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
+            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at, 3))
             container.appendChild(link);
         });
     }

@@ -44,10 +44,8 @@ function createProductCard(id, product) {
     return card;
 }
 
-function createInCartCard(id, product, editable = true) {
+function createInCartCard(id, product, quantity, editable = true) {
     const {top, image, name, description, price} = product;
-
-    const quantity = cart.getQuantity(id);
 
     const cardHTML = `
         <div class="in-cart-card bg-white" data-product-id="${id}">
@@ -103,7 +101,8 @@ function toggleCategory(category) {
 function getCartItems(parent) {
     cart.getList().forEach(id => {
         const product = PRODUCT_TABLE[id];
-        parent.appendChild(createInCartCard(id, product));
+        const quantity = cart.getQuantity(id);
+        parent.appendChild(createInCartCard(id, product, quantity));
     });
 
     return {
@@ -115,7 +114,8 @@ function getCartItems(parent) {
 function getOrderItems(parent) {
     cart.getList().forEach(id => {
         const product = PRODUCT_TABLE[id];
-        parent.appendChild(createInCartCard(id, product, false));
+        const quantity = cart.getQuantity(id);
+        parent.appendChild(createInCartCard(id, product, quantity, false));
     });
 
     return {

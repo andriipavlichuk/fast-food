@@ -109,6 +109,8 @@ class Order {
         this.receiver.card_l4d = card_l4d;
         this.comment = comment;
         this.placed_at = placed_at;
+
+        return this;
     }
 
     fromString(str) {

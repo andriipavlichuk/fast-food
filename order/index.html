@@ -14,21 +14,9 @@
 <main id="order-page">
     <a href="/cart/" class="btn btn-outline"><span><-</span>Назад</a>
 
-    <h1 class="text-primary">Замовлення №123456</h1>
+    <h1 class="text-primary">Замовлення №</h1>
 
-    <div class="order-card bg-white">
-        <div class="order-stage">
-            <div class="order-progress">
-                <div class="stage-circle active"></div>
-                <div class="stage-circle active"></div>
-                <div class="stage-circle active"></div>
-                <div class="stage-circle active"></div>
-                <div class="stage-circle"></div>
-                <div class="order-progress-bar"></div>
-            </div>
-            <p class="body-text text-primary">Замовлення прямує до вас</p>
-        </div>
-    </div>
+    <div id="order-card" class="order-card bg-white"></div>
 
     <div id="receipt">
         <table>
@@ -37,87 +25,41 @@
             </tr>
             <tr>
                 <td class="body-text text-background">Ім’я отримувача</td>
-                <td class="body-text text-background text-to-right">Панас Одноокий</td>
+                <td id="receivers-name" class="body-text text-background text-to-right"></td>
             </tr>
             <tr>
-                <td class="body-text text-background">Адерса отримувача</td>
-                <td class="body-text text-background text-to-right">вулиця Артура Мирного, 79</td>
+                <td class="body-text text-background">Електронна пошта замовника</td>
+                <td id="receivers-email" class="body-text text-background text-to-right"></td>
+            </tr>
+            <tr>
+                <td class="body-text text-background">Адреса отримувача</td>
+                <td id="receivers-address" class="body-text text-background text-to-right"></td>
             </tr>
             <tr>
                 <td class="body-text text-background">Спосіб оплати</td>
-                <td class="body-text text-background text-to-right">Карта, ...1234.</td>
+                <td id="receivers-card" class="body-text text-background text-to-right"></td>
             </tr>
-            <tr>
+            <tr id="comment-row">
                 <td class="body-text text-background">Коментар</td>
-                <td class="body-text text-background text-to-right">Перше замовлення</td>
-            </tr>
-            <tr>
-                <td class="body-text text-background">Номер замовлення</td>
-                <td class="body-text text-background text-to-right">123456</td>
+                <td id="comment" class="body-text text-background text-to-right"></td>
             </tr>
             <tr>
                 <td class="body-text text-background">Вартість продуктів</td>
-                <td class="body-text text-background text-to-right">629₴</td>
+                <td id="items-cost" class="body-text text-background text-to-right"></td>
             </tr>
             <tr>
                 <td class="body-text text-background">Вартість доставки</td>
-                <td class="body-text text-background text-to-right">47₴</td>
+                <td id="delivery-cost" class="body-text text-background text-to-right"></td>
             </tr>
         </table>
 
         <div class="horizontal-rule"></div>
 
-        <h3 class="text-white">Усього: 676₴</h3>
+        <h3 id="total" class="text-white">Усього: 0₴</h3>
     </div>
 
     <h2 class="text-primary">Ваше замовлення</h2>
-
-    <div id="items">
-        <div class="in-cart-card bg-white">
-            <span class="badge bg-highlight text-white">ТОП</span>
-            <img src="/assets/products/Product1.jpg" alt="Королівський бургер">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Королівський бургер</h5>
-                    <p class="body-text-small text-secondary card-description">Соковита котлета, сир чеддер, свіже
-                        листя салату та соус барбекю.</p>
-                    <h3 class="card-price text-primary">169₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-        <div class="in-cart-card bg-white">
-            <span class="badge bg-highlight text-white">ТОП</span>
-            <img src="/assets/products/Product2.jpg" alt="Філадельфія лайт">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Філадельфія лайт</h5>
-                    <p class="body-text-small text-secondary card-description">Ніжний лосось, вершковий сир, авокадо
-                        та рис – ідеальне поєднання.</p>
-                    <h3 class="card-price text-primary">219₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-        <div class="in-cart-card bg-white">
-            <img src="/assets/products/Product9.jpg" alt="Чотири сири">
-            <div class="card-body">
-                <div class="card-info">
-                    <h5 class="text-primary card-title">Чотири сири</h5>
-                    <p class="body-text-small text-secondary card-description">Моцарела, горгонзола, пармезан і
-                        чеддер на хрусткому тісті.</p>
-                    <h3 class="card-price text-primary">239₴</h3>
-                </div>
-                <div class="quantity">
-                    <p class="text-primary body-text-large">1x</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="items"></div>
 </main>
 
 <footer>
@@ -128,7 +70,46 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/order.js"></script>
+<script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
+
+<script>
+
+    // Get ID from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const orderId = urlParams.get('id');
+    const order = orderId ? loadOrderByID(orderId) : null;
+
+    if (order) {
+        document.querySelector('h1').innerText = `Замовлення №${orderId}`;
+
+        document.getElementById("order-card").innerHTML = createOrderProgressCard(order.placed_at, 3).innerHTML;
+
+        document.getElementById("receivers-name").innerText = order.receiver.name;
+        document.getElementById("receivers-email").innerText = order.receiver.email;
+        document.getElementById("receivers-address").innerText = order.receiver.address;
+        document.getElementById("receivers-card").innerText = `Карта, ...${order.receiver.card_l4d}`;
+
+        const comment = order.comment.trim();
+        if (comment) {
+            document.getElementById("comment").innerText = `${order.comment}`;
+        } else {
+            document.getElementById("comment-row").remove();
+        }
+
+        document.getElementById("items-cost").innerText = `${order.total}₴`;
+        document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
+        document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
+
+        const items = order.items;
+        Object.keys(items).forEach(item => {
+            let product = PRODUCT_TABLE[item];
+            product.price = items[item].p;
+            document.getElementById("items").appendChild(createInCartCard(item, product, items[item].q, false));
+        })
+    }
+
+</script>
 
 </body>
 </html>

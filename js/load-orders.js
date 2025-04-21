@@ -6,7 +6,7 @@ const STAGES = [
     "Замовлення отримано",
 ]
 
-function createOrderCard(id, address, placed_at = 0, stage = 3) {
+function createOrderCard(id, address, placed_at = 0, stage = 0) {
     const date = new Date(placed_at);
     const day = String(date.getDate()).padStart(2, '0');
     const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -27,6 +27,23 @@ function createOrderCard(id, address, placed_at = 0, stage = 3) {
                 <p class="body-text-small text-secondary">•</p>
                 <p class="body-text-small text-secondary">Доставити до ${address}</p>
             </div>
+            ${createOrderProgressCard(placed_at, stage).innerHTML}
+        </div>
+    `
+
+    const wrapper = document.createElement("div");
+    wrapper.innerHTML = element.trim();
+    return wrapper.firstChild;
+}
+
+function createOrderProgressCard(placed_at = 0, stage = 3) {
+    const progress = 100 * Math.min(stage, STAGES.length) / (STAGES.length - 1);
+    const progress_circles = STAGES.map((_, index) =>
+        `<div class="stage-circle${index <= stage ? ' active' : ''}"></div>`
+    ).join('')
+
+    const element = `
+        <div class="order-card bg-white">
             <div class="order-stage">
                 <div class="order-progress">
                     ${progress_circles}
@@ -34,10 +51,15 @@ function createOrderCard(id, address, placed_at = 0, stage = 3) {
                 </div>
                 <p class="body-text text-primary">${STAGES[Math.min(stage, STAGES.length)]}</p>
             </div>
-        </div>
-    `
+        </div>`
 
     const wrapper = document.createElement("div");
     wrapper.innerHTML = element.trim();
     return wrapper.firstChild;
+}
+
+function loadOrderByID(id) {
+    const orders = JSON.parse(localStorage.getItem("active_orders"));
+    const order = orders ? orders.find(order => order[0] === +id) : undefined;
+    return order ? new Order().fromArray(order) : undefined;
 }
