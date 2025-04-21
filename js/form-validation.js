@@ -9,7 +9,6 @@ const PATTERNS = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-
     document.querySelector('form').addEventListener('submit', function (event) {
         event.preventDefault();
         if (validateInputs()) alert("Далі нізя");
@@ -32,12 +31,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function validateInputs() {
-        return Array.from(document.querySelectorAll('[data-pattern]'))
+        return Array.from(document.querySelectorAll('input'))
             .map(input => validateInput(input))
             .every(isValid => isValid);
     }
 
+    function formatInput(input) {
+        switch (input.name) {
+            case "card-number":
+                return input.value.replace(/\D/g, "").substring(0, 16).replace(/(.{4})/g, "$1 ").trim();
+
+            case "card-cvv":
+                return input.value.replace(/\D/g, "").substring(0, 3);
+
+            case "card-exp":
+                const raw_value = input.value.replace(/\D/g, "").substring(0, 4);
+                return raw_value.length > 2 ? raw_value.substring(0, 2) + "/" + raw_value.substring(2) : raw_value;
+
+            default:
+                return input.value;
+        }
+    }
+
     document.querySelector("form")?.addEventListener('input', function (event) {
-        validateInput(event.target)
+        const input = event.target;
+        input.value = formatInput(input);
+        validateInput(input);
     });
 })
