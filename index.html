@@ -47,7 +47,7 @@
                 <h1 class="text-primary">Доставимо їжу швидше, ніж ви думаєте 😋</h1>
                 <p class="body-text text-secondary">FastFood - це коли смачно, корисно і миттєво! Вам не доведеться
                     чекати годинами - наші кур’єри вже в дорозі.</p>
-                <button class="btn btn-outline">Гортайте ↓</button>
+                <button id="scroll-to-catalog" class="btn btn-outline">Гортайте ↓</button>
             </div>
             <img src="/assets/Delivery%20Guy.svg" alt="Кур'єр">
         </div>
@@ -151,6 +151,16 @@
 <script>
     const catalogGrid = document.querySelector('.catalog-grid');
     script(catalogGrid, 8);
+
+    const scrollToCatalog = document.getElementById('scroll-to-catalog');
+    scrollToCatalog.addEventListener('click', () => {
+        const catalogPosition = document.getElementById('catalog').getBoundingClientRect().top;
+        const navbarHeight = document.querySelector('nav').offsetHeight;
+        window.scrollTo({
+            top: catalogPosition + window.scrollY - navbarHeight - 32,
+            behavior: 'smooth'
+        });
+    });
 </script>
 </body>
 </html>
