@@ -133,6 +133,32 @@
     document.getElementById("items-cost").innerText = `${order.total}₴`;
     document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
     document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
+
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        if (validateInputs()) {
+            order.setReceiversInfo(
+                document.querySelector(`[name="name"]`).value,
+                document.querySelector(`[name="email"]`).value,
+                document.querySelector(`[name="address"]`).value,
+                +document.querySelector(`[name="card-number"]`).value.replace(/\D/g, "").substring(12, 16),
+                document.querySelector(`[name="comment"]`).value,
+            )
+
+            cart.clear();
+            localStorage.removeItem('pending_order');
+            const active_orders = localStorage.getItem('active_orders');
+            const new_order = order.place();
+
+            if (active_orders) {
+                localStorage.setItem('active_orders', active_orders.slice(0, -1) + ',' + new_order + ']');
+            } else {
+                localStorage.setItem('active_orders', '[' + new_order + ']');
+            }
+
+            window.location.href = '/cart';
+        }
+    });
 </script>
 </body>
 </html>

@@ -64,6 +64,12 @@ class Cart {
         }
     }
 
+    clear () {
+        this.cart = {};
+        localStorage.removeItem("cart");
+        this._callUpdateFunction()
+    }
+
     _getObjectArguments() {
         return {
             items: Object.entries(this.cart),
