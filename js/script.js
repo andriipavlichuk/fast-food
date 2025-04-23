@@ -81,7 +81,7 @@ function createInCartCard(id, product, quantity, editable = true) {
     return card;
 }
 
-function script(parent, amount = -1) {
+function fillCatalogItems(parent, amount = -1) {
     amount = amount < 0 ? Object.keys(PRODUCT_TABLE).length : amount;
 
     let items = Object.entries(PRODUCT_TABLE).slice(0, amount);

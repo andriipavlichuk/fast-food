@@ -54,7 +54,7 @@
     </section>
 
     <section id="catalog">
-        <h2 class="text-primary">Що сьогодні замовлятимите?</h2>
+        <h2 class="text-primary">Що сьогодні замовлятимете?</h2>
         <p class="body-text text-secondary">Швидка доставка ваших улюблених страв! Обирайте з меню та насолоджуйтесь
             смаком.</p>
         <div class="catalog-grid"></div>
@@ -78,59 +78,7 @@
         <h2 class="text-primary">Що про нас говорять люди?</h2>
         <p class="body-text text-secondary">Довіра наших клієнтів – найкраща нагорода. Читайте відгуки та діліться
             враженнями!</p>
-        <div id="review-grid">
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Oleksandr.jpg" alt="Олександр">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Олександр</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                        </div>
-                    </div>
-                </div>
-                <p class="body-text text-primary review-text">“Дуже задоволений сервісом! Замовлення прийшло швидко,
-                    їжа була гарячою та смачною”.</p>
-            </div>
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Maryna.jpg" alt="Марина">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Марина</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/StarOutline.svg" alt="Без зірки">
-                        </div>
-                    </div>
-                </div>
-                <p class="body-text text-primary review-text">“Хороший сервіс, ввічливий персонал, але було невелике
-                    запізнення. Проте їжа свіжа і смачна. Рекомендую!”.</p>
-            </div>
-            <div class="review bg-white">
-                <div class="review-author">
-                    <img src="/assets/avatars/Vladyslav.jpg" alt="Владислав">
-                    <div class="right">
-                        <h6 class="text-primary review-author-name">Владислав</h6>
-                        <div class="review-rating">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірка">
-                            <img src="/assets/icons/Star.svg" alt="Зірки">
-                        </div>
-                    </div>
-                </div>
-                <p class="body-text text-primary review-text">“Сервіс приємно здивував! Їжа гаряча, доставка швидка.
-                    Користуватимусь й надалі та рекомендуватиму друзям”.</p>
-            </div>
-        </div>
+        <div id="review-grid"></div>
 
         <div id="cta">
             <h2 class="text-white">Голодний? Замов прямо зараз!</h2>
@@ -147,10 +95,14 @@
 
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
+<script src="/js/reviews.js"></script>
 <script src="/js/script.js"></script>
 <script>
     const catalogGrid = document.querySelector('.catalog-grid');
-    script(catalogGrid, 8);
+    fillCatalogItems(catalogGrid, 8);
+
+    const reviewGrid = document.getElementById('review-grid');
+    fillReviewItems(reviewGrid, 3);
 
     const scrollToCatalog = document.getElementById('scroll-to-catalog');
     scrollToCatalog.addEventListener('click', () => {
