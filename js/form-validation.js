@@ -15,10 +15,10 @@ function validateInput(input) {
 
     let is_valid = PATTERNS[input.name].test(input.value.trim());
     const msg = document.querySelector(`[data-msg-for="${input.name}"]`);
-    msg.innerHTML = "*Має містити дату у форматі ММ/РР";
 
     if (input.name === "card-exp") {
         const raw_value = input.value.replace(/\D/g, "").substring(0, 4);
+        msg.innerHTML = "*Має містити дату у форматі ММ/РР";
         if (raw_value.length === 4) {
             const current_date = new Date();
             const current_month = current_date.getMonth() + 1;
