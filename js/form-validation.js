@@ -13,7 +13,25 @@ function validateInput(input) {
         return true;
     }
 
-    const is_valid = PATTERNS[input.name].test(input.value.trim());
+    let is_valid = PATTERNS[input.name].test(input.value.trim());
+    const msg = document.querySelector(`[data-msg-for="${input.name}"]`);
+    msg.innerHTML = "*Має містити дату у форматі ММ/РР";
+
+    if (input.name === "card-exp") {
+        const raw_value = input.value.replace(/\D/g, "").substring(0, 4);
+        if (raw_value.length === 4) {
+            const current_date = new Date();
+            const current_month = current_date.getMonth() + 1;
+            const current_year = current_date.getFullYear() % 100;
+            const month = parseInt(raw_value.substring(0, 2));
+            const year = parseInt(raw_value.substring(2, 4));
+            if (year < current_year || (year === current_year && month <= current_month)) {
+                msg.innerHTML = "*Термін придатності картки минув";
+                is_valid = false;
+            }
+        }
+    }
+
     input.classList.toggle("outline-danger", !is_valid);
     document.querySelector(`[data-msg-for="${input.name}"]`)?.classList.toggle("hidden", is_valid);
 
