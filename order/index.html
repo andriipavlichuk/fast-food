@@ -83,7 +83,7 @@
     if (order) {
         document.querySelector('h1').innerText = `Замовлення №${orderId}`;
 
-        document.getElementById("order-card").innerHTML = createOrderProgressCard(order.placed_at, 3).innerHTML;
+        document.getElementById("order-card").innerHTML = createOrderProgressCard(orderId, order.placed_at).innerHTML;
 
         document.getElementById("receivers-name").innerText = order.receiver.name;
         document.getElementById("receivers-email").innerText = order.receiver.email;
@@ -107,6 +107,8 @@
             product.price = items[item].p;
             document.getElementById("items").appendChild(createInCartCard(item, product, items[item].q, false));
         })
+
+        updateOrderStages(orderId)
     }
 
 </script>

@@ -105,8 +105,9 @@
 
             const link = document.createElement('a');
             link.href = `/order/?id=${active_order.id}`;
-            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at, 3))
+            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
             container.appendChild(link);
+            updateOrderStages(active_order.id);
         });
     }
 </script>
