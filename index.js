@@ -10,7 +10,7 @@ function getPath(name) {
 }
 
 // App static files (publicly available)
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Pages
 ["/", "/about", "/catalog", "/contact", "/cart", "/account", "/reviews", "/place_order", "/order"].forEach(route => {
