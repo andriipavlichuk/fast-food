@@ -18,8 +18,10 @@ To launch the website locally | Щоб запустити проєкт лока�
    ```sh
    git clone https://github.com/andriipavlichuk/fast-food.git
    ```
-2. Launch the app on a local server | Запустіть локальний сервер<br>
-   (e.g. XAMPP or VS Code Live Server).
+2. Launch the app | Запустіть застосунок<br>
+   ```sh
+   npm run dev
+   ```
 
 ## 📄 License | Ліцензія
 
