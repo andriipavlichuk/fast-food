@@ -70,46 +70,47 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/order.js"></script>
+<script src="/js/components.js"></script>
 <script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
 
 <script>
 
     // Get ID from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const orderId = urlParams.get('id');
-    const order = orderId ? loadOrderByID(orderId) : null;
-
-    if (order) {
-        document.querySelector('h1').innerText = `Замовлення №${orderId}`;
-
-        document.getElementById("order-card").innerHTML = createOrderProgressCard(orderId, order.placed_at).innerHTML;
-
-        document.getElementById("receivers-name").innerText = order.receiver.name;
-        document.getElementById("receivers-email").innerText = order.receiver.email;
-        document.getElementById("receivers-address").innerText = order.receiver.address;
-        document.getElementById("receivers-card").innerText = `Карта, ...${order.receiver.card_l4d}`;
-
-        const comment = order.comment.trim();
-        if (comment) {
-            document.getElementById("comment").innerText = `${order.comment}`;
-        } else {
-            document.getElementById("comment-row").remove();
-        }
-
-        document.getElementById("items-cost").innerText = `${order.total}₴`;
-        document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
-        document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
-
-        const items = order.items;
-        Object.keys(items).forEach(item => {
-            let product = PRODUCT_TABLE[item];
-            product.price = items[item].p;
-            document.getElementById("items").appendChild(createInCartCard(item, product, items[item].q, false));
-        })
-
-        updateOrderStages(orderId)
-    }
+    // const urlParams = new URLSearchParams(window.location.search);
+    // const orderId = urlParams.get('id');
+    // const order = orderId ? loadOrderByID(orderId) : null;
+    //
+    // if (order) {
+    //     document.querySelector('h1').innerText = `Замовлення №${orderId}`;
+    //
+    //     document.getElementById("order-card").innerHTML = createOrderProgressCard(orderId, order.placed_at).innerHTML;
+    //
+    //     document.getElementById("receivers-name").innerText = order.receiver.name;
+    //     document.getElementById("receivers-email").innerText = order.receiver.email;
+    //     document.getElementById("receivers-address").innerText = order.receiver.address;
+    //     document.getElementById("receivers-card").innerText = `Карта, ...${order.receiver.card_l4d}`;
+    //
+    //     const comment = order.comment.trim();
+    //     if (comment) {
+    //         document.getElementById("comment").innerText = `${order.comment}`;
+    //     } else {
+    //         document.getElementById("comment-row").remove();
+    //     }
+    //
+    //     document.getElementById("items-cost").innerText = `${order.total}₴`;
+    //     document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
+    //     document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
+    //
+    //     const items = order.items;
+    //     Object.keys(items).forEach(item => {
+    //         let product = PRODUCT_TABLE[item];
+    //         product.price = items[item].p;
+    //         document.getElementById("items").appendChild(createInCartCard(item, product, items[item].q, false));
+    //     })
+    //
+    //     updateOrderStages(orderId)
+    // }
 
 </script>
 

@@ -69,46 +69,46 @@
 <script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
 <script>
-    const grid = document.getElementById('items');
-    const placeOrder = document.getElementById('place-order');
-    const mainSub = document.getElementById('main-sub');
-    const toCatalog = document.getElementById('to-catalog');
-
-    function updateAppearance(e) {
-        if (e.isEmpty) {
-            placeOrder.classList.add('hidden');
-            mainSub.classList.remove('hidden');
-            toCatalog.classList.remove('hidden');
-        } else {
-            placeOrder.classList.remove('hidden');
-            mainSub.classList.add('hidden');
-            toCatalog.classList.add('hidden');
-            document.querySelector("#place-order h4").innerText = `Сума: ${e.total}₴`;
-        }
-    }
-
-    cart.addUpdateListener(function (event) {
-        updateAppearance(event);
-    })
-
-    updateAppearance(getCartItems(grid))
-
-    const active_orders = localStorage.getItem('active_orders');
-    if (active_orders) {
-        document.getElementById("no-active-orders").classList.add("hidden");
-        const container = document.getElementById('active-orders');
-
-        JSON.parse(active_orders).forEach(order_entries => {
-            const active_order = new Order();
-            active_order.fromArray(order_entries);
-
-            const link = document.createElement('a');
-            link.href = `/order/?id=${active_order.id}`;
-            link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
-            container.appendChild(link);
-            updateOrderStages(active_order.id);
-        });
-    }
+    // const grid = document.getElementById('items');
+    // const placeOrder = document.getElementById('place-order');
+    // const mainSub = document.getElementById('main-sub');
+    // const toCatalog = document.getElementById('to-catalog');
+    //
+    // function updateAppearance(e) {
+    //     if (e.isEmpty) {
+    //         placeOrder.classList.add('hidden');
+    //         mainSub.classList.remove('hidden');
+    //         toCatalog.classList.remove('hidden');
+    //     } else {
+    //         placeOrder.classList.remove('hidden');
+    //         mainSub.classList.add('hidden');
+    //         toCatalog.classList.add('hidden');
+    //         document.querySelector("#place-order h4").innerText = `Сума: ${e.total}₴`;
+    //     }
+    // }
+    //
+    // cart.addUpdateListener(function (event) {
+    //     updateAppearance(event);
+    // })
+    //
+    // updateAppearance(getCartItems(grid))
+    //
+    // const active_orders = localStorage.getItem('active_orders');
+    // if (active_orders) {
+    //     document.getElementById("no-active-orders").classList.add("hidden");
+    //     const container = document.getElementById('active-orders');
+    //
+    //     JSON.parse(active_orders).forEach(order_entries => {
+    //         const active_order = new Order();
+    //         active_order.fromArray(order_entries);
+    //
+    //         const link = document.createElement('a');
+    //         link.href = `/order/?id=${active_order.id}`;
+    //         link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
+    //         container.appendChild(link);
+    //         updateOrderStages(active_order.id);
+    //     });
+    // }
 </script>
 </body>
 </html>

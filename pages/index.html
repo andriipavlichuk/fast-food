@@ -94,14 +94,15 @@
 
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
-<script src="/js/reviews.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/components.js"></script>
+
 <script>
     const catalogGrid = document.querySelector('.catalog-grid');
-    fillCatalogItems(catalogGrid, 8);
+    getCatalogItems(catalogGrid, 8);
 
     const reviewGrid = document.getElementById('review-grid');
-    fillReviewItems(reviewGrid, 3);
+    getReviewCards(reviewGrid, 3);
 
     const scrollToCatalog = document.getElementById('scroll-to-catalog');
     scrollToCatalog.addEventListener('click', () => {

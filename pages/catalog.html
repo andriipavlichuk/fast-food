@@ -43,9 +43,9 @@
     <p class="sub body-text text-secondary">Товари, що доступні для замовлення</p>
     <div id="filters">
         <h5 class="text-secondary">Фільтри</h5>
-        <div class="checkbox checked" data-filter-category="burgers">Бургери</div>
-        <div class="checkbox checked" data-filter-category="pizza">Піца</div>
-        <div class="checkbox checked" data-filter-category="rolls">Суші</div>
+        <div class="checkbox checked" data-filter-category="Бургери">Бургери</div>
+        <div class="checkbox checked" data-filter-category="Піца">Піца</div>
+        <div class="checkbox checked" data-filter-category="Роли">Роли</div>
     </div>
 
     <div id="catalog-grid"></div>
@@ -59,13 +59,16 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/components.js"></script>
 <script>
     const catalogGrid = document.getElementById('catalog-grid');
-    fillCatalogItems(catalogGrid);
+    getCatalogItems(catalogGrid);
 
     document.querySelectorAll('#filters .checkbox').forEach(filter => {
         filter.onclick = function () {
-            toggleCategory(filter.dataset.filterCategory);
+            document
+                .querySelectorAll(`[data-category="${filter.dataset.filterCategory}"]`)
+                .forEach(card => card.classList.toggle("hidden"));
             this.classList.toggle('checked');
         }
     })
