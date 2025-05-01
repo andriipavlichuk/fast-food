@@ -1,8 +1,13 @@
+require('dotenv').config();
+
 const express = require('express');
 const path = require('path');
+const { Pool } = require('pg');
 
+// Setup
 const app = express();
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
 // Get path to the page
 function getPath(name) {
@@ -20,9 +25,23 @@ app.use(express.static(path.join(__dirname, 'public')));
     })
 })
 
+// API routes
+app.get('/api/catalog', async (req, res) => {
+    try {
+        const limit = parseInt(req.query.limit) || -1;
+        const query = `SELECT * FROM catalog ORDER BY id`;
+        const result = await pool.query(limit > 0 ? query + ` LIMIT ${limit}` : query);
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
+
+// 404 page
 app.use(function (req, res, next) {
     res.status(404).sendFile(path.join(__dirname + '/404/index.html'));
 });
 
-// API routes
+// Server
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));

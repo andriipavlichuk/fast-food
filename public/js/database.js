@@ -1,3 +1,4 @@
+// Local database
 const PRODUCT_TABLE = {
     "1": {
         top: true,
@@ -192,7 +193,6 @@ const PRODUCT_TABLE = {
         category: "rolls",
     },
 };
-
 const REVIEWS = {
     "1": {
         name: "Олександр",
@@ -261,3 +261,12 @@ const REVIEWS = {
         comment: "Дуже зручно замовляти, все зрозуміло. Сайт приємний, оформлення просте, не потрібно довго шукати"
     }
 };
+
+// Pull data from the server
+async function requestProducts(limit) {
+    const response = await fetch(`/api/catalog?limit=${limit}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+}
