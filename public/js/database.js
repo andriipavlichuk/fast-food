@@ -18,3 +18,11 @@ async function requestReviews(limit) {
     }
     return await response.json();
 }
+
+async function requestItems(ids = []) {
+    const response = await fetch(`/api/items?ids=${ids.join(',')}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+}

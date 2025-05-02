@@ -50,6 +50,28 @@ app.get('/api/reviews', async (req, res) => {
     }
 });
 
+app.get('/api/items', async (req, res) => {
+    try {
+        const ids = req.query.ids || ""; // Expecting a comma-separated list of IDs, e.g., "1,2,3"
+        if (!ids) {
+            return res.status(400).json({ error: 'No IDs provided' });
+        }
+
+        const idList = ids.split(',').map(id => parseInt(id.trim())).filter(id => !isNaN(id));
+        if (idList.length === 0) {
+            return res.status(400).json({ error: 'Invalid IDs provided' });
+        }
+
+        const query = `SELECT * FROM catalog WHERE id = ANY($1::int[]) ORDER BY id`;
+        const result = await pool.query(query, [idList]);
+
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
+
 // 404 page
 app.use(function (req, res, next) {
     res.status(404).sendFile(path.join(__dirname + '/404/index.html'));

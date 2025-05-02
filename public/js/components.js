@@ -21,7 +21,7 @@ function textToNode(text) {
 function createProductCard(productId, name, description, image, price, isTop, category, inCart = false) {
     const card = textToNode(`
         <div class="product-card bg-white" data-category="${category}" data-product-id="${productId}">
-            ${top ? '<span class="badge bg-highlight text-white">ТОП</span>' : ''}
+            ${isTop ? '<span class="badge bg-highlight text-white">ТОП</span>' : ''}
             <img src="${image}" alt="${name}">
             <div class="card-body">
                 <h5 class="text-primary card-title">${name}</h5>
@@ -36,10 +36,8 @@ function createProductCard(productId, name, description, image, price, isTop, ca
         </div>
     `);
 
-    // const button = card.querySelector(".card-btn");
-    // button.onclick = inCart ? () => removeFromCart(productId) : () => addToCart(productId);
-    // return card;
-
+    const button = card.querySelector(".card-btn");
+    button.onclick = inCart ? () => removeFromCart(productId) : () => addToCart(productId);
     return card;
 }
 
@@ -47,7 +45,7 @@ function createProductCard(productId, name, description, image, price, isTop, ca
 function createInCartCard(productId, name, description, image, price, isTop, category, quantity, editable = true) {
     const card = textToNode(`
         <div class="in-cart-card bg-white" data-product-id="${productId}">
-            ${top ? '<span class="badge bg-highlight text-white">ТОП</span>' : ''}
+            ${isTop ? '<span class="badge bg-highlight text-white">ТОП</span>' : ''}
             <img src="${image}" alt="${name}">
             <div class="card-body">
                 <div class="card-info">
@@ -67,12 +65,12 @@ function createInCartCard(productId, name, description, image, price, isTop, cat
         </div>
     `);
 
-    // if (editable) {
-    //     const quantity_input = card.querySelector("input[type='number']");
-    //     card.querySelector(".increment").onclick = () => setQuantity(productId, cart.getQuantity(productId) + 1);
-    //     card.querySelector(".decrement").onclick = () => setQuantity(productId, cart.getQuantity(productId) - 1);
-    //     quantity_input.addEventListener("focusout", () => setQuantity(productId, quantity_input.value))
-    // }
+    if (editable) {
+        const quantity_input = card.querySelector("input[type='number']");
+        card.querySelector(".increment").onclick = () => setQuantity(productId, cart.getQuantity(productId) + 1);
+        card.querySelector(".decrement").onclick = () => setQuantity(productId, cart.getQuantity(productId) - 1);
+        quantity_input.addEventListener("focusout", () => setQuantity(productId, quantity_input.value))
+    }
     return card;
 }
 
@@ -146,41 +144,41 @@ function createOrderProgressCard(id, placed_at = 0, stage = -1) {
 /* == ======== == */
 
 function addToCart(id) {
-    // cart.add(id);
-    //
-    // const button = document.querySelector(`[data-product-id="${id}"] .card-btn`);
-    // button.classList.add("btn-outline");
-    // button.classList.remove("btn-highlight");
-    // button.innerHTML = "В кошику";
-    // button.onclick = () => removeFromCart(id);
+    cart.add(id);
+
+    const button = document.querySelector(`[data-product-id="${id}"] .card-btn`);
+    button.classList.add("btn-outline");
+    button.classList.remove("btn-highlight");
+    button.innerHTML = "В кошику";
+    button.onclick = () => removeFromCart(id);
 }
 
 function removeFromCart(id) {
-    // cart.remove(id);
-    //
-    // const button = document.querySelector(`[data-product-id="${id}"] .card-btn`);
-    // button.classList.add("btn-highlight");
-    // button.classList.remove("btn-outline");
-    // button.innerHTML = "До кошику";
-    // button.onclick = addToCart;
+    cart.remove(id);
+
+    const button = document.querySelector(`[data-product-id="${id}"] .card-btn`);
+    button.classList.add("btn-highlight");
+    button.classList.remove("btn-outline");
+    button.innerHTML = "До кошику";
+    button.onclick = addToCart;
 }
 
 function setQuantity(id, quantity) {
-    // if (quantity <= 0) {
-    //     const confirmRemoval = confirm("Ви впевнені, що хочете прибрати товар з кошика?");
-    //
-    //     if (confirmRemoval) {
-    //         document.querySelector(`[data-product-id="${id}"]`).remove();
-    //     } else {
-    //         quantity = 1;
-    //     }
-    // }
-    //
-    // const input = document.querySelector(`[data-product-id="${id}"] input[type="number"]`);
-    // cart.setQuantity(id, quantity);
-    // if (quantity > 0) {
-    //     input.value = quantity;
-    // }
+    if (quantity <= 0) {
+        const confirmRemoval = confirm("Ви впевнені, що хочете прибрати товар з кошика?");
+
+        if (confirmRemoval) {
+            document.querySelector(`[data-product-id="${id}"]`).remove();
+        } else {
+            quantity = 1;
+        }
+    }
+
+    const input = document.querySelector(`[data-product-id="${id}"] input[type="number"]`);
+    cart.setQuantity(id, quantity);
+    if (quantity > 0) {
+        input.value = quantity;
+    }
 }
 
 function calculateOrderStage(placed_at) {
@@ -196,7 +194,7 @@ function calculateOrderStage(placed_at) {
 function getCatalogItems(parent, amount = -1) {
     requestProducts(amount).then(items => {
         [...items].forEach((product) => {
-            parent.appendChild(createProductCard(...Object.values(product), false))
+            parent.appendChild(createProductCard(...Object.values(product), cart.hasItemWithId(product.id)));
         });
     });
 }
@@ -205,33 +203,20 @@ function getCatalogItems(parent, amount = -1) {
 function getReviewCards(parent, amount = -1) {
     requestReviews(amount).then(items => {
         [...items].forEach((product) => {
-            parent.appendChild(createReviewCard(...Object.values(product), false))
+            parent.appendChild(createReviewCard(...Object.values(product)))
         });
     });
 }
 
-function getCartItems(parent, cart) {
-    // cart.getList().forEach(id => {
-    //     const product = PRODUCT_TABLE[id];
-    //     const quantity = cart.getQuantity(id);
-    //     parent.appendChild(createInCartCard(...Object.values(product), quantity));
-    // });
-    //
-    // return {
-    //     isEmpty: cart.isEmpty(),
-    //     total: cart.getTotal()
-    // };
-}
+// Get a list of items in the card
+function getCartItems(parent, editable = true) {
+    requestItems(cart.getList()).then(items => {
+        [...items].forEach(item => {
+            parent.appendChild(createInCartCard(...Object.values(item), cart.getQuantity(item.id)), editable);
+        })
+    })
 
-function getOrderItems(parent, cart) {
-    // cart.getList().forEach(id => {
-    //     const product = PRODUCT_TABLE[id];
-    //     const quantity = cart.getQuantity(id);
-    //     parent.appendChild(createInCartCard(...Object.values(product), quantity, false));
-    // });
-    //
-    // return {
-    //     isEmpty: cart.isEmpty(),
-    //     total: cart.getTotal()
-    // };
+    return {
+        isEmpty: cart.isEmpty(),
+    };
 }
