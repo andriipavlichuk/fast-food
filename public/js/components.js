@@ -77,9 +77,9 @@ function createInCartCard(productId, name, description, image, price, isTop, cat
 }
 
 // Review card
-function createReviewCard(name, avatar, rating, comment) {
+function createReviewCard(id, name, avatar, rating, comment) {
     return textToNode(`
-        <div class="review bg-white">
+        <div class="review bg-white" data-review-id="${id}">
             <div class="review-author">
                 <img src="${avatar}" alt="${name}">
                 <div class="right">
@@ -203,12 +203,11 @@ function getCatalogItems(parent, amount = -1) {
 
 // Get a list of review cards for reviews
 function getReviewCards(parent, amount = -1) {
-    // amount = amount < 0 ? Object.keys(REVIEWS).length : amount;
-    //
-    // let items = Object.entries(REVIEWS).slice(0, amount);
-    // items.forEach(([id, entries]) => {
-    //     parent.appendChild(createReviewCard(...Object.values(entries)));
-    // });
+    requestReviews(amount).then(items => {
+        [...items].forEach((product) => {
+            parent.appendChild(createReviewCard(...Object.values(product), false))
+        });
+    });
 }
 
 function getCartItems(parent, cart) {
