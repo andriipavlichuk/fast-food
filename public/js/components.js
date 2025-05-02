@@ -139,6 +139,22 @@ function createOrderProgressCard(id, placed_at = 0, stage = -1) {
     `)
 }
 
+// Checkbox for filters
+function createFilterCheckbox(category) {
+    const filter = textToNode(
+        `<div class="checkbox checked" data-filter-category="${category}">${category}</div>`
+    )
+
+    filter.onclick = function () {
+        document
+            .querySelectorAll(`[data-category="${filter.dataset.filterCategory}"]`)
+            .forEach(card => card.classList.toggle("hidden"));
+        this.classList.toggle('checked');
+    }
+
+    return filter;
+}
+
 /* == ======== == */
 /* == HANDLERS == */
 /* == ======== == */
@@ -195,7 +211,24 @@ function getCatalogItems(parent, amount = -1) {
     requestProducts(amount).then(items => {
         [...items].forEach((product) => {
             parent.appendChild(createProductCard(...Object.values(product), cart.hasItemWithId(product.id)));
+            categories.add(product.category);
         });
+    });
+}
+
+// Get a list of product cards for catalog along with categories
+function getCatalog(list_parent, filter_parent, amount = -1) {
+    requestProducts(amount).then(items => {
+        const categories = new Set();
+
+        [...items].forEach((product) => {
+            list_parent.appendChild(createProductCard(...Object.values(product), cart.hasItemWithId(product.id)));
+            categories.add(product.category);
+        });
+
+        [...categories].forEach((category) => {
+            filter_parent.appendChild(createFilterCheckbox(category));
+        })
     });
 }
 
