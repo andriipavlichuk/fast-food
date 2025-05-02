@@ -38,6 +38,18 @@ app.get('/api/catalog', async (req, res) => {
     }
 });
 
+app.get('/api/reviews', async (req, res) => {
+    try {
+        const limit = parseInt(req.query.limit) || -1;
+        const query = `SELECT * FROM reviews ORDER BY id`;
+        const result = await pool.query(limit > 0 ? query + ` LIMIT ${limit}` : query);
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Database error' });
+    }
+});
+
 // 404 page
 app.use(function (req, res, next) {
     res.status(404).sendFile(path.join(__dirname + '/404/index.html'));

@@ -1,77 +1,18 @@
 // Local database
-const PRODUCT_TABLE = [{"id":1,"name":"Королівський бургер","description":"Соковита котлета, сир чеддер, свіже листя салату та соус барбекю.","image":"/assets/products/Product1.jpg","price":"169","top":true,"category":"Бургери"},{"id":2,"name":"Філадельфія лайт","description":"Ніжний лосось, вершковий сир, авокадо та рис – ідеальне поєднання.","image":"/assets/products/Product2.jpg","price":"219","top":true,"category":"Роли"},{"id":3,"name":"Чікен Бургер","description":"Соковита куряча котлета, свіжі овочі та соус ранч.","image":"/assets/products/Product3.jpg","price":"159","top":true,"category":"Бургери"},{"id":4,"name":"Дабл Чізбургер","description":"Подвійна котлета, сир та фірмовий соус для максимального смаку.","image":"/assets/products/Product4.jpg","price":"189","top":true,"category":"Бургери"},{"id":5,"name":"Піца Пепероні","description":"Тонке тісто, томатний соус, моцарела та пікантна пепероні.","image":"/assets/products/Product5.jpg","price":"219","top":true,"category":"Піца"},{"id":6,"name":"Швидка Маргарита","description":"Тонке тісто, ароматний томатний соус, моцарела та базилік.","image":"/assets/products/Product6.jpg","price":"189","top":true,"category":"Піца"},{"id":7,"name":"Каліфорнія рол","description":"Крабове м'ясо, авокадо, огірок та ікра тобіко.","image":"/assets/products/Product7.jpg","price":"199","top":true,"category":"Роли"},{"id":8,"name":"Веган Бургер","description":"Рослинна котлета, свіжі овочі та веганський соус.","image":"/assets/products/Product8.jpg","price":"149","top":true,"category":"Бургери"},{"id":9,"name":"Чотири сири","description":"Моцарела, горгонзола, пармезан і чеддер на хрусткому тісті.","image":"/assets/products/Product9.jpg","price":"239","top":false,"category":"Піца"},{"id":10,"name":"Дракон рол","description":"Рис, вугор, авокадо, огірок, унагі соус і кунжут.","image":"/assets/products/Product10.jpg","price":"229","top":false,"category":"Роли"},{"id":11,"name":"Гриль Бургер","description":"Яловичина на грилі, карамелізована цибуля та соус чилі.","image":"/assets/products/Product11.jpg","price":"179","top":false,"category":"Бургери"},{"id":12,"name":"М'ясна феєрія","description":"Ковбаски, шинка, бекон, моцарела та гострий соус.","image":"/assets/products/Product12.jpg","price":"249","top":false,"category":"Піца"},{"id":13,"name":"BBQ Бургер","description":"Котлета, бекон, смажена цибуля, барбекю соус і розплавлений чеддер.","image":"/assets/products/Product13.jpg","price":"189","top":false,"category":"Бургери"},{"id":14,"name":"Футомакі з тунцем","description":"Ніжний тунець, авокадо, крем-сир, рис і норі","image":"/assets/products/Product14.jpg","price":"239","top":false,"category":"Роли"},{"id":15,"name":"Гавайська піца","description":"Класичне поєднання шинки, ананасів і ніжного сиру.","image":"/assets/products/Product15.jpg","price":"199","top":false,"category":"Піца"},{"id":16,"name":"Сяке Макі","description":"Класичний рол із лососем, рисом та водоростями.","image":"/assets/products/Product16.jpg","price":"179","top":false,"category":"Роли"},{"id":17,"name":"Діабло","description":"Гостра салямі, перець халапеньйо, томатний соус, моцарела та соус чилі.","image":"/assets/products/Product17.jpg","price":"229","top":false,"category":"Піца"},{"id":18,"name":"Мексиканський Бургер","description":"Котлета з перцем халапеньйо, гуакамоле та пікантний соус.","image":"/assets/products/Product18.jpg","price":"179","top":false,"category":"Бургери"},{"id":19,"name":"Овочева піца","description":"Перець, помідори, гриби, оливки та моцарела..","image":"/assets/products/Product19.jpg","price":"189","top":false,"category":"Піца"},{"id":20,"name":"Темпура рол","description":"Смажений у клярі рол із креветкою та сиром.","image":"/assets/products/Product20.jpg","price":"199","top":false,"category":"Роли"},{"id":21,"name":"Веган рол","description":"Авокадо, огірок, болгарський перець і крем-сир.","image":"/assets/products/Product21.jpg","price":"189","top":false,"category":"Роли"},{"id":22,"name":"Цезар Піца","description":"Куряче філе, пармезан, листя салату, соус Цезар і моцарела.","image":"/assets/products/Product22.jpg","price":"219","top":false,"category":"Піца"},{"id":23,"name":"Супер Чізбургер","description":"Потрійний чеддер, потрійна котлета та кремовий соус.","image":"/assets/products/Product23.jpg","price":"229","top":false,"category":"Бургери"},{"id":26,"name":"Темпура рол","description":"Тигрова креветка, огірок, соус спайсі та ікра тобіко.","image":"/assets/products/Product24.jpg","price":"219","top":false,"category":"Роли"}]
-const REVIEWS = {
-    "1": {
-        name: "Олександр",
-        avatar: "/assets/avatars/Oleksandr.jpg",
-        rating: 5,
-        comment: "Дуже задоволений сервісом! Замовлення прийшло швидко, їжа була гарячою та смачною"
-    },
-    "2": {
-        name: "Марина",
-        avatar: "/assets/avatars/Maryna.jpg",
-        rating: 4,
-        comment: "Хороший сервіс, ввічливий персонал, але було невелике запізнення. Проте їжа свіжа і смачна. Рекомендую!"
-    },
-    "3": {
-        name: "Владислав",
-        avatar: "/assets/avatars/Vladyslav.jpg",
-        rating: 5,
-        comment: "Сервіс приємно здивував! Їжа гаряча, доставка швидка. Користуватимусь й надалі та рекомендуватиму друзям"
-    },
-    "4": {
-        name: "Андрій",
-        avatar: "/assets/avatars/Andrii.jpg",
-        rating: 5,
-        comment: "Все привезли гарячим і акуратно запакованим, дуже задоволений сервісом"
-    },
-    "5": {
-        name: "Ольга",
-        avatar: "/assets/avatars/Olga.jpg",
-        rating: 4,
-        comment: "Королівський бургер – просто топ! Великий, соковитий, багато начинки, а соус просто ідеальний"
-    },
-    "6": {
-        name: "Максим",
-        avatar: "/assets/avatars/Maxym.jpg",
-        rating: 4,
-        comment: "Піца смачна, але хотілося б більше начинки. Проте тісто відмінне, і сир добре тягнеться"
-    },
-    "7": {
-        name: "Ірина",
-        avatar: "/assets/avatars/Iryna.jpg",
-        rating: 5,
-        comment: "Усе супер, замовлятиму ще! Дуже зручно, що можна оплатити онлайн, і кур’єр не запізнився"
-    },
-    "8": {
-        name: "Катерина",
-        avatar: "/assets/avatars/Kateryna.jpg",
-        rating: 5,
-        comment: "Улюблений сервіс, завжди якісно! Замовляла вже кілька разів, і кожного разу все чудово"
-    },
-    "9": {
-        name: "Богдан",
-        avatar: "/assets/avatars/Bohdan.jpg",
-        rating: 4,
-        comment: "Суші свіжі, але трохи довга доставка. Можливо, через погоду, але хотілося б швидше"
-    },
-    "10": {
-        name: "Софія",
-        avatar: "/assets/avatars/Sofia.jpg",
-        rating: 5,
-        comment: "Роли Філадельфія були дуже свіжі, а лосось просто танув у роті. Буду замовляти ще! Спробуйте й самі"
-    },
-    "11": {
-        name: "Олег",
-        avatar: "/assets/avatars/Oleg.jpg",
-        rating: 4,
-        comment: "Дуже зручно замовляти, все зрозуміло. Сайт приємний, оформлення просте, не потрібно довго шукати"
-    }
-};
+const PRODUCT_TABLE = [{"id":1,"name":"Королівський бургер","description":"Соковита котлета, сир чеддер, свіже листя салату та соус барбекю.","image":"/assets/products/Product1.jpg","price":"169","top":true,"category":"Бургери"},{"id":2,"name":"Філадельфія лайт","description":"Ніжний лосось, вершковий сир, авокадо та рис – ідеальне поєднання.","image":"/assets/products/Product2.jpg","price":"219","top":true,"category":"Роли"},{"id":3,"name":"Чікен Бургер","description":"Соковита куряча котлета, свіжі овочі та соус ранч.","image":"/assets/products/Product3.jpg","price":"159","top":true,"category":"Бургери"},{"id":4,"name":"Дабл Чізбургер","description":"Подвійна котлета, сир та фірмовий соус для максимального смаку.","image":"/assets/products/Product4.jpg","price":"189","top":true,"category":"Бургери"},{"id":5,"name":"Піца Пепероні","description":"Тонке тісто, томатний соус, моцарела та пікантна пепероні.","image":"/assets/products/Product5.jpg","price":"219","top":true,"category":"Піца"},{"id":6,"name":"Швидка Маргарита","description":"Тонке тісто, ароматний томатний соус, моцарела та базилік.","image":"/assets/products/Product6.jpg","price":"189","top":true,"category":"Піца"},{"id":7,"name":"Каліфорнія рол","description":"Крабове м'ясо, авокадо, огірок та ікра тобіко.","image":"/assets/products/Product7.jpg","price":"199","top":true,"category":"Роли"},{"id":8,"name":"Веган Бургер","description":"Рослинна котлета, свіжі овочі та веганський соус.","image":"/assets/products/Product8.jpg","price":"149","top":true,"category":"Бургери"},{"id":9,"name":"Чотири сири","description":"Моцарела, горгонзола, пармезан і чеддер на хрусткому тісті.","image":"/assets/products/Product9.jpg","price":"239","top":false,"category":"Піца"},{"id":10,"name":"Дракон рол","description":"Рис, вугор, авокадо, огірок, унагі соус і кунжут.","image":"/assets/products/Product10.jpg","price":"229","top":false,"category":"Роли"},{"id":11,"name":"Гриль Бургер","description":"Яловичина на грилі, карамелізована цибуля та соус чилі.","image":"/assets/products/Product11.jpg","price":"179","top":false,"category":"Бургери"},{"id":12,"name":"М'ясна феєрія","description":"Ковбаски, шинка, бекон, моцарела та гострий соус.","image":"/assets/products/Product12.jpg","price":"249","top":false,"category":"Піца"},{"id":13,"name":"BBQ Бургер","description":"Котлета, бекон, смажена цибуля, барбекю соус і розплавлений чеддер.","image":"/assets/products/Product13.jpg","price":"189","top":false,"category":"Бургери"},{"id":14,"name":"Футомакі з тунцем","description":"Ніжний тунець, авокадо, крем-сир, рис і норі","image":"/assets/products/Product14.jpg","price":"239","top":false,"category":"Роли"},{"id":15,"name":"Гавайська піца","description":"Класичне поєднання шинки, ананасів і ніжного сиру.","image":"/assets/products/Product15.jpg","price":"199","top":false,"category":"Піца"},{"id":16,"name":"Сяке Макі","description":"Класичний рол із лососем, рисом та водоростями.","image":"/assets/products/Product16.jpg","price":"179","top":false,"category":"Роли"},{"id":17,"name":"Діабло","description":"Гостра салямі, перець халапеньйо, томатний соус, моцарела та соус чилі.","image":"/assets/products/Product17.jpg","price":"229","top":false,"category":"Піца"},{"id":18,"name":"Мексиканський Бургер","description":"Котлета з перцем халапеньйо, гуакамоле та пікантний соус.","image":"/assets/products/Product18.jpg","price":"179","top":false,"category":"Бургери"},{"id":19,"name":"Овочева піца","description":"Перець, помідори, гриби, оливки та моцарела..","image":"/assets/products/Product19.jpg","price":"189","top":false,"category":"Піца"},{"id":20,"name":"Темпура рол","description":"Смажений у клярі рол із креветкою та сиром.","image":"/assets/products/Product20.jpg","price":"199","top":false,"category":"Роли"},{"id":21,"name":"Веган рол","description":"Авокадо, огірок, болгарський перець і крем-сир.","image":"/assets/products/Product21.jpg","price":"189","top":false,"category":"Роли"},{"id":22,"name":"Цезар Піца","description":"Куряче філе, пармезан, листя салату, соус Цезар і моцарела.","image":"/assets/products/Product22.jpg","price":"219","top":false,"category":"Піца"},{"id":23,"name":"Супер Чізбургер","description":"Потрійний чеддер, потрійна котлета та кремовий соус.","image":"/assets/products/Product23.jpg","price":"229","top":false,"category":"Бургери"},{"id":26,"name":"Темпура рол","description":"Тигрова креветка, огірок, соус спайсі та ікра тобіко.","image":"/assets/products/Product24.jpg","price":"219","top":false,"category":"Роли"}];
+const REVIEWS = [{"id":1,"name":"Олександр","avatar":"/assets/avatars/Oleksandr.jpg","rating":5,"comment":"Дуже задоволений сервісом! Замовлення прийшло швидко, їжа була гарячою та смачною"},{"id":2,"name":"Марина","avatar":"/assets/avatars/Maryna.jpg","rating":4,"comment":"Хороший сервіс, ввічливий персонал, але було невелике запізнення. Проте їжа свіжа і смачна. Рекомендую!"},{"id":3,"name":"Владислав","avatar":"/assets/avatars/Vladyslav.jpg","rating":5,"comment":"Сервіс приємно здивував! Їжа гаряча, доставка швидка. Користуватимусь й надалі та рекомендуватиму друзям"},{"id":4,"name":"Андрій","avatar":"/assets/avatars/Andrii.jpg","rating":5,"comment":"Все привезли гарячим і акуратно запакованим, дуже задоволений сервісом"},{"id":5,"name":"Ольга","avatar":"/assets/avatars/Olga.jpg","rating":4,"comment":"Королівський бургер – просто топ! Великий, соковитий, багато начинки, а соус просто ідеальний"},{"id":6,"name":"Максим","avatar":"/assets/avatars/Maxym.jpg","rating":4,"comment":"Піца смачна, але хотілося б більше начинки. Проте тісто відмінне, і сир добре тягнеться"},{"id":7,"name":"Ірина","avatar":"/assets/avatars/Iryna.jpg","rating":5,"comment":"Усе супер, замовлятиму ще! Дуже зручно, що можна оплатити онлайн, і кур’єр не запізнився"},{"id":8,"name":"Катерина","avatar":"/assets/avatars/Kateryna.jpg","rating":5,"comment":"Улюблений сервіс, завжди якісно! Замовляла вже кілька разів, і кожного разу все чудово"},{"id":9,"name":"Богдан","avatar":"/assets/avatars/Bohdan.jpg","rating":4,"comment":"Суші свіжі, але трохи довга доставка. Можливо, через погоду, але хотілося б швидше"},{"id":10,"name":"Софія","avatar":"/assets/avatars/Sofia.jpg","rating":5,"comment":"Роли Філадельфія були дуже свіжі, а лосось просто танув у роті. Буду замовляти ще! Спробуйте й самі"},{"id":11,"name":"Олег","avatar":"/assets/avatars/Oleg.jpg","rating":4,"comment":"Дуже зручно замовляти, все зрозуміло. Сайт приємний, оформлення просте, не потрібно довго шукати"}];
 
 // Pull data from the server
 async function requestProducts(limit) {
     const response = await fetch(`/api/catalog?limit=${limit}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+}
+
+async function requestReviews(limit) {
+    const response = await fetch(`/api/reviews?limit=${limit}`);
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
