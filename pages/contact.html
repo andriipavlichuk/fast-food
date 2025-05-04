@@ -46,12 +46,12 @@
     <section id="form">
         <h4 class="text-primary">Напишіть нам</h4>
 
-        <form action="/contact">
+        <form id="contact-form" action="/contact" novalidate>
             <div class="form-group">
                 <label for="name" class="body-text text-primary">Повне ім'я</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Джон Доу" required>
                 <p class="error-message body-text-small text-danger hidden" data-msg-for="name">*Має містити мінімум
-                    2 знаки</p>
+                    5 знаки</p>
             </div>
             <div class="form-group">
                 <label for="email" class="body-text text-primary">Електронна адереса</label>
@@ -65,7 +65,7 @@
                 <p class="error-message body-text-small text-danger hidden" data-msg-for="message">*Має містити
                     мінімум 5 знаків</p>
             </div>
-            <input type="submit" class="btn btn-primary" value="Відправити">
+            <button type="submit" class="btn btn-primary">Відправити</button>
         </form>
     </section>
 
@@ -85,6 +85,7 @@
 </footer>
 
 <script src="/js/cart.js"></script>
+<script src="/js/form-validation.js"></script>
 <script src="/js/script.js"></script>
 </body>
 </html>

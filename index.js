@@ -3,11 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const { Pool } = require('pg');
+const { Resend } = require('resend');
 
 // Setup
 const app = express();
 const PORT =  process.env.PORT || 3000;
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Get path to the page
 function getPath(name) {
@@ -70,6 +72,24 @@ app.get('/api/items', async (req, res) => {
         console.error(err);
         res.status(500).json({ error: 'Database error' });
     }
+});
+
+// Handlers
+app.post('/api/send-email', async (req, res) => {
+    res.status(500).json(req.headers);
+
+    // try {
+    //     const result = await resend.emails.send({
+    //         from: `Fast Food Customer Service <customer-service@${process.env.DOMAIN}>`,
+    //         to: '',
+    //         subject: 'Отримання листа',
+    //         text: 'Ура! Ми отримали ваш лист!',
+    //     });
+    //
+    //     res.status(200).json(result);
+    // } catch (error) {
+    //     res.status(500).json(error);
+    // }
 });
 
 // 404 page

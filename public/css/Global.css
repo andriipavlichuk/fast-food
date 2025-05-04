@@ -176,6 +176,10 @@ a:not(.btn):hover {
     letter-spacing: 0!important;
 }
 
+.btn.disabled {
+    pointer-events: none;
+}
+
 .btn-small {
     padding: 0.25rem 0.75rem;
 }
@@ -186,7 +190,8 @@ a:not(.btn):hover {
     color: rgb(var(--white));
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary.disabled {
     border-color: rgb(var(--primary-hover));
     background-color: rgb(var(--primary-hover));
 }
@@ -197,7 +202,8 @@ a:not(.btn):hover {
     color: rgb(var(--white));
 }
 
-.btn-highlight:hover {
+.btn-highlight:hover,
+.btn-highlight.disabled {
     border-color: rgb(var(--highlight-hover));
     background-color: rgb(var(--highlight-hover));
 }
@@ -208,9 +214,29 @@ a:not(.btn):hover {
     color: rgb(var(--primary));
 }
 
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline.disabled {
     border-color: rgb(var(--primary-hover));
     color: rgb(var(--primary-hover));
+}
+
+/* == Поп апи == */
+
+.popup {
+    font-family: 'Inter', sans-serif;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(var(--highlight));
+    color: rgb(var(--white));
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    z-index: 1000;
+    opacity: 0;
+    transition: 0.5s cubic-bezier(.75, .20, 0, 1);
+    transform: translateY(1rem);
 }
 
 /* == Чек бокси == */
