@@ -47,7 +47,7 @@
     <div id="items"></div>
 
     <div id="place-order">
-        <h4 class="text-primary">Сума: 0₴</h4>
+        <h4 class="text-primary">Сума: ₴</h4>
         <a href="/place_order/" class="btn btn-primary">Замовити <span>-></span></a>
     </div>
 
@@ -66,33 +66,67 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/order.js"></script>
+<script src="/js/components.js"></script>
 <script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
 <script>
-    // const grid = document.getElementById('items');
-    // const placeOrder = document.getElementById('place-order');
-    // const mainSub = document.getElementById('main-sub');
-    // const toCatalog = document.getElementById('to-catalog');
-    //
-    // function updateAppearance(e) {
-    //     if (e.isEmpty) {
-    //         placeOrder.classList.add('hidden');
-    //         mainSub.classList.remove('hidden');
-    //         toCatalog.classList.remove('hidden');
-    //     } else {
-    //         placeOrder.classList.remove('hidden');
-    //         mainSub.classList.add('hidden');
-    //         toCatalog.classList.add('hidden');
-    //         document.querySelector("#place-order h4").innerText = `Сума: ${e.total}₴`;
-    //     }
-    // }
-    //
-    // cart.addUpdateListener(function (event) {
-    //     updateAppearance(event);
-    // })
-    //
-    // updateAppearance(getCartItems(grid))
-    //
+    const grid = document.getElementById('items');
+    const placeOrder = document.getElementById('place-order');
+    const mainSub = document.getElementById('main-sub');
+    const toCatalog = document.getElementById('to-catalog');
+
+    // Hide unnecessary text elements
+    function updateAppearance(e) {
+        if (e.isEmpty) {
+            placeOrder.classList.add('hidden');
+            mainSub.classList.remove('hidden');
+            toCatalog.classList.remove('hidden');
+        } else {
+            placeOrder.classList.remove('hidden');
+            mainSub.classList.add('hidden');
+            toCatalog.classList.add('hidden')
+        }
+    }
+
+    // Store prices for items in the cart locally
+    const prices = Object.fromEntries(cart.getList().map(item => [item, -1]));
+
+    // Calculate total price of items in the cart
+    function calculateTotal() {
+        let total = 0;
+
+        for (const index of Object.keys(cart.cart)) {
+            if (prices[index] < 0) {
+                return -1;
+            }
+
+            total += prices[index] * cart.cart[index]
+        }
+
+        return total;
+    }
+
+    // Insert new total in the corresponding text element
+    function applyNewTotal() {
+        const total = calculateTotal();
+        document.querySelector("#place-order h4").innerText = `Сума: ${total < 0 ? "" : total}₴`;
+    }
+
+    // After receiving data about items in the cart
+    requestItems(cart.getList()).then(function (items) {
+        [...items].forEach(function (item) {
+            prices[item.id] = +item.price;
+        })
+        applyNewTotal();
+    })
+
+    cart.addUpdateListener(function (event) {
+        updateAppearance(event);
+        applyNewTotal();
+    })
+
+    updateAppearance(getCartItems(grid))
+
     // const active_orders = localStorage.getItem('active_orders');
     // if (active_orders) {
     //     document.getElementById("no-active-orders").classList.add("hidden");
