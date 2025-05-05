@@ -156,7 +156,6 @@
 
         order.place();
 
-        data.comment = order.comment;
         data.delivery = order.delivery_cost;
         data.items = order.items;
         data.placed = order.placed_at;
@@ -176,42 +175,18 @@
                 e.submitter.classList.remove("disabled");
                 if (response.ok) {
                     e.target.reset();
+                    cart.clear();
                     console.log('Success:', response);
-
+                    window.location.href = '/cart';
                     return;
                 }
                 throw new Error('Failed to send message');
             })
             .catch(error => {
                 console.error('Error:', error);
+                showPopup("Не вдалось надіслати замовлення. Спробуйте ще раз пізніше", "error", 10000);
             });
     })
-
-    // document.querySelector('form').addEventListener('submit', function (event) {
-    //     event.preventDefault();
-    //     if (validateInputs()) {
-    //         order.setReceiversInfo(
-    //             document.querySelector(`[name="name"]`).value,
-    //             document.querySelector(`[name="email"]`).value,
-    //             document.querySelector(`[name="address"]`).value,
-    //             +document.querySelector(`[name="card-number"]`).value.replace(/\D/g, "").substring(12, 16),
-    //             document.querySelector(`[name="comment"]`).value,
-    //         )
-    //
-    //         cart.clear();
-    //         localStorage.removeItem('pending_order');
-    //         const active_orders = localStorage.getItem('active_orders');
-    //         const new_order = order.place();
-    //
-    //         if (active_orders) {
-    //             localStorage.setItem('active_orders', active_orders.slice(0, -1) + ',' + new_order + ']');
-    //         } else {
-    //             localStorage.setItem('active_orders', '[' + new_order + ']');
-    //         }
-    //
-    //         window.location.href = '/cart';
-    //     }
-    // });
 </script>
 </body>
 </html>
