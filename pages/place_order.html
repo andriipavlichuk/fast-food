@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <input type="submit" class="btn btn-highlight" value="Підтвердити замовлення">
+            <input type="submit" class="btn btn-highlight disabled" value="Підтвердити замовлення">
         </form>
 
         <div id="receipt">
@@ -77,22 +77,18 @@
                     <th colspan="2"><h3 class="text-white">Платіж</h3></th>
                 </tr>
                 <tr>
-                    <td class="body-text text-background">Номер замовлення</td>
-                    <td id="order-id" class="body-text text-background text-to-right">123456</td>
-                </tr>
-                <tr>
                     <td class="body-text text-background">Вартість продуктів</td>
-                    <td id="items-cost" class="body-text text-background text-to-right">0₴</td>
+                    <td id="items-cost" class="body-text text-background text-to-right">₴</td>
                 </tr>
                 <tr>
                     <td class="body-text text-background">Вартість доставки</td>
-                    <td id="delivery-cost" class="body-text text-background text-to-right">0₴</td>
+                    <td id="delivery-cost" class="body-text text-background text-to-right">₴</td>
                 </tr>
             </table>
 
             <div class="horizontal-rule"></div>
 
-            <h3 id="total" class="text-white">Усього: 0₴</h3>
+            <h3 id="total" class="text-white">Усього: ₴</h3>
         </div>
     </div>
 
@@ -113,28 +109,84 @@
 <script src="/js/components.js"></script>
 <script src="/js/script.js"></script>
 <script>
-    // const order = new Order();
-    // const grid = document.getElementById('items');
-    //
-    // const res = getOrderItems(grid);
-    // if (res.isEmpty) {
-    //     window.location.href = '/cart';
-    // }
-    //
-    // if (order.load("pending_order")) {
-    //     order.updateCart(cart.cart, PRODUCT_TABLE);
-    // } else {
-    //     order.create(cart.cart, PRODUCT_TABLE, Math.floor(Math.random() * 61) + 20);
-    // }
-    //
-    // // Saving changes
-    // order.save("pending_order");
-    //
-    // document.getElementById('order-id').innerHTML = `${order.id}`;
-    // document.getElementById("items-cost").innerText = `${order.total}₴`;
-    // document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
-    // document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
-    //
+    const order = new Order();
+    const grid = document.getElementById('items');
+
+    const res = getCartItems(grid, false);
+    if (res.isEmpty) {
+        window.location.href = '/cart';
+    }
+
+    // After receiving data about items in the cart
+    requestItems(cart.getList()).then(function (items) {
+        const prices = Object.fromEntries(cart.getList().map(item => [item, -1]));
+
+        [...items].forEach(function (item) {
+            prices[item.id] = +item.price;
+        })
+
+        order.create(cart.cart, prices, Math.floor(Math.random() * 61) + 20);
+        updateAppearance()
+    })
+
+    function updateAppearance() {
+        document.getElementById("items-cost").innerText = `${order.total}₴`;
+        document.getElementById("delivery-cost").innerText = `${order.delivery_cost}₴`;
+        document.getElementById("total").innerText = `Усього: ${order.total + order.delivery_cost}₴`;
+        document.querySelector("[type='submit']")?.classList.remove("disabled");
+    }
+
+    document.querySelector('form')?.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!validateInputs()) {
+            return;
+        }
+
+        const formData = new FormData(this);
+        const data = {};
+        formData.forEach((value, key) => {
+            if (!key.startsWith("card")) {
+                data[key] = formatInput({ name: key, value });
+            }
+
+            if (key === "card-number") {
+                data.column = formatInput({ name: "key", value }).replace(/\D/g, "").substring(12, 16)
+            }
+        });
+
+        order.place();
+
+        data.comment = order.comment;
+        data.delivery = order.delivery_cost;
+        data.items = order.items;
+        data.placed = order.placed_at;
+
+        console.log(data);
+        console.log(order);
+
+        e.submitter.classList.add("disabled");
+        fetch('/handlers/add-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => {
+                e.submitter.classList.remove("disabled");
+                if (response.ok) {
+                    e.target.reset();
+                    console.log('Success:', response);
+
+                    return;
+                }
+                throw new Error('Failed to send message');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    })
+
     // document.querySelector('form').addEventListener('submit', function (event) {
     //     event.preventDefault();
     //     if (validateInputs()) {

@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             e.submitter.classList.add("disabled");
-            fetch('/api/send-email', {
+            fetch('/handlers/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -124,8 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     e.submitter.classList.remove("disabled");
                     if (response.ok) {
                         e.target.reset();
-                        console.log('Success:', data);
+                        console.log('Success:', response);
                         showPopup("Повідомлення надіслано!", "success", 5000);
+                        return;
                     }
                     throw new Error('Failed to send message');
                 })
