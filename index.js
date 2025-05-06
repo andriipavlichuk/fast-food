@@ -7,6 +7,7 @@ const path = require('path');
 const { Pool } = require('pg');
 const { Resend } = require('resend');
 const crypto = require('crypto');
+const cron = require('node-cron');
 
 // Setup
 const app = express();
@@ -49,6 +50,19 @@ function decryptData(encryptedData, key) {
 function getPath(name) {
     return path.join(__dirname, 'pages', `${name}.html`);
 }
+
+// Scheduled task to delete old orders
+cron.schedule('0 * * * *', async () => {
+    try {
+        const query = `
+            DELETE FROM orders
+            WHERE placed_at < NOW() - INTERVAL '1 day'
+        `;
+        await pool.query(query);
+    } catch (err) {
+        //
+    }
+});
 
 // Middleware to assign a token automatically
 app.use((req, res, next) => {
@@ -194,6 +208,13 @@ app.post('/handlers/add-order', async (req, res) => {
     }
 
     try {
+        // Extend the auth token lifespan by 12 hours
+        res.cookie('auth_token', receiverToken, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production',
+            maxAge: 12 * 60 * 60 * 1000,
+        });
+
         // Hash the token
         const hashedToken = hashToken(receiverToken);
 
