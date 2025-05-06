@@ -244,7 +244,7 @@ function getReviewCards(parent, amount = -1) {
 function getCartItems(parent, editable = true) {
     requestItems(cart.getList()).then(items => {
         [...items].forEach(item => {
-            parent.appendChild(createInCartCard(...Object.values(item), cart.getQuantity(item.id)), editable);
+            parent.appendChild(createInCartCard(...Object.values(item), cart.getQuantity(item.id), editable));
         })
     })
 
@@ -254,8 +254,13 @@ function getCartItems(parent, editable = true) {
 }
 
 // Get a list of active orders
-function getActiveOrders(parent) {
+function getActiveOrders(parent, if_empty = () => {}) {
     requestOrders().then(items => {
+        if (!items.length) {
+            if_empty();
+            return;
+        }
+
         [...items].forEach(order => {
             const element = textToNode(`<a href="/order/${order.id}"></a>`)
             element.appendChild(createOrderCard(

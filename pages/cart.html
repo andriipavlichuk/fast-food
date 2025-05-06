@@ -52,7 +52,7 @@
     </div>
 
     <h2 class="text-primary">Активні замовлення</h2>
-    <p class="body-text text-secondary" id="no-active-orders">Немає активних замовлень</p>
+    <p class="body-text text-secondary hidden" id="no-active-orders">Немає активних замовлень</p>
 
     <div id="active-orders"></div>
 
@@ -127,7 +127,7 @@
     updateAppearance(getCartItems(grid))
 
     const container = document.getElementById('active-orders');
-    getActiveOrders(container);
+    getActiveOrders(container, () => document.getElementById("no-active-orders").classList.remove("hidden"));
 
     // const active_orders = localStorage.getItem('active_orders');
     // if (active_orders) {
