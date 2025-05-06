@@ -26,3 +26,11 @@ async function requestItems(ids = []) {
     }
     return await response.json();
 }
+
+async function requestOrders(ids = []) {
+    const response = await fetch(`/api/orders?ids=${ids.join(',')}`);
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
+    }
+    return await response.json();
+}

@@ -67,7 +67,6 @@
 <script src="/js/cart.js"></script>
 <script src="/js/order.js"></script>
 <script src="/js/components.js"></script>
-<script src="/js/load-orders.js"></script>
 <script src="/js/script.js"></script>
 <script>
     const grid = document.getElementById('items');
@@ -126,6 +125,9 @@
     })
 
     updateAppearance(getCartItems(grid))
+
+    const container = document.getElementById('active-orders');
+    getActiveOrders(container);
 
     // const active_orders = localStorage.getItem('active_orders');
     // if (active_orders) {

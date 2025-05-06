@@ -132,14 +132,21 @@ app.get('/api/orders', async (req, res) => {
         // Hash the token
         const hashedToken = hashToken(receiverToken);
 
-        // Query the database for orders associated with the hashed token
+        // Parse the ids parameter if provided
+        const ids = req.query.ids ? req.query.ids.split(',').map(id => parseInt(id.trim())).filter(id => !isNaN(id)) : null;
+
+        // Query the database for orders associated with the hashed token and optional ids
         const query = `
-            SELECT id, items, delivery, comment, placed_at, receiver_name, receiver_email, receiver_address, l4d
+            SELECT id, items, delivery, comment,
+                   EXTRACT(EPOCH FROM placed_at) * 1000 AS placed_at,
+                   receiver_name, receiver_email, receiver_address, l4d
             FROM orders
             WHERE receiver_token = $1
+            ${ids ? `AND id = ANY($2::int[])` : ''}
             ORDER BY placed_at DESC
         `;
-        const result = await pool.query(query, [hashedToken]);
+        const values = ids ? [hashedToken, ids] : [hashedToken];
+        const result = await pool.query(query, values);
 
         // Decrypt the receiver_name and receiver_address fields
         const encryptionKey = process.env.ENCRYPTION_KEY;

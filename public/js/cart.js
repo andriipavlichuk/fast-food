@@ -50,12 +50,6 @@ class Cart {
         return Object.keys(this.cart).length === 0;
     }
 
-    getTotal() {
-        return Object
-            .entries(this.cart)
-            .reduce((total, [id, quantity]) => total + quantity * PRODUCT_TABLE[id].price, 0);
-    }
-
     addUpdateListener(callback) {
         if (typeof callback === "function") {
             this.onChange.push(callback);

@@ -211,7 +211,6 @@ function getCatalogItems(parent, amount = -1) {
     requestProducts(amount).then(items => {
         [...items].forEach((product) => {
             parent.appendChild(createProductCard(...Object.values(product), cart.hasItemWithId(product.id)));
-            categories.add(product.category);
         });
     });
 }
@@ -252,4 +251,17 @@ function getCartItems(parent, editable = true) {
     return {
         isEmpty: cart.isEmpty(),
     };
+}
+
+// Get a list of active orders
+function getActiveOrders(parent) {
+    requestOrders().then(items => {
+        [...items].forEach(order => {
+            parent.appendChild(createOrderCard(
+                +order.id,
+                order.receiver_address,
+                +order.placed_at
+            ));
+        })
+    })
 }
