@@ -82,11 +82,32 @@ app.use((req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Pages
-["/", "/about", "/catalog", "/contact", "/cart", "/account", "/reviews", "/place_order", "/order"].forEach(route => {
+["/", "/about", "/catalog", "/contact", "/cart", "/account", "/reviews", "/place_order"].forEach(route => {
     app.get(route, (req, res) => {
         const pageName = route === '/' ? 'index' : route.slice(1);
         res.sendFile(getPath(pageName));
     })
+})
+
+app.get('/order', async (req, res) => {
+    res.redirect("/cart");
+})
+
+app.get('/order/:id', async (req, res) => {
+    // Check, if the order exists, otherwise redirect to the cart page
+    const orderId = req.params.id;
+    const receiverToken = req.cookies?.auth_token; // Retrieve token from cookies
+    if (!receiverToken) {
+        return res.redirect("/cart");
+    }
+    const hashedToken = hashToken(receiverToken);
+    const query = `SELECT id FROM orders WHERE id = $1 AND receiver_token = $2`;
+    const result = await pool.query(query, [orderId, hashedToken]);
+    if (result.rowCount === 0) {
+        return res.redirect("/cart");
+    }
+    // If the order exists, render the order page
+    res.sendFile(getPath("order"));
 })
 
 // API routes

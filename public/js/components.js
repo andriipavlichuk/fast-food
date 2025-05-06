@@ -257,10 +257,25 @@ function getCartItems(parent, editable = true) {
 function getActiveOrders(parent) {
     requestOrders().then(items => {
         [...items].forEach(order => {
-            parent.appendChild(createOrderCard(
+            const element = textToNode(`<a href="/order/${order.id}"></a>`)
+            element.appendChild(createOrderCard(
                 +order.id,
                 order.receiver_address,
                 +order.placed_at
+            ))
+            parent.appendChild(element);
+        })
+    })
+}
+
+// Get a list of items in the order
+function getOrderItems(items, parent) {
+    requestItems(Object.keys(items)).then(products => {
+        [...products].forEach(item => {
+            parent.appendChild(createInCartCard(
+                +item.id, item.name, item.description, item.image,
+                items[item.id].p, item.top, item.category, items[item.id].q,
+                false
             ));
         })
     })
