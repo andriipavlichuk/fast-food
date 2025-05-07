@@ -21,10 +21,10 @@
         <a href="/">
             <div class="nav-item">Головна</div>
         </a>
-        <a href="/catalog/">
+        <a href="/catalog">
             <div class="nav-item active">Каталог</div>
         </a>
-        <a href="/about/">
+        <a href="/about">
             <div class="nav-item">Про нас</div>
         </a>
         <a href="/contact/">
@@ -32,10 +32,9 @@
         </a>
     </div>
     <div class="nav-right">
-        <a href="/cart/">
+        <a href="/cart">
             <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
         </a>
-        <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
     </div>
 </nav>
 
@@ -44,9 +43,6 @@
     <p class="sub body-text text-secondary">Товари, що доступні для замовлення</p>
     <div id="filters">
         <h5 class="text-secondary">Фільтри</h5>
-        <div class="checkbox checked" data-filter-category="burgers">Бургери</div>
-        <div class="checkbox checked" data-filter-category="pizza">Піца</div>
-        <div class="checkbox checked" data-filter-category="rolls">Суші</div>
     </div>
 
     <div id="catalog-grid"></div>
@@ -60,16 +56,12 @@
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/components.js"></script>
 <script>
     const catalogGrid = document.getElementById('catalog-grid');
-    fillCatalogItems(catalogGrid);
+    const filters = document.getElementById('filters');
 
-    document.querySelectorAll('#filters .checkbox').forEach(filter => {
-        filter.onclick = function () {
-            toggleCategory(filter.dataset.filterCategory);
-            this.classList.toggle('checked');
-        }
-    })
+    getCatalog(catalogGrid, filters);
 </script>
 </body>
 </html>

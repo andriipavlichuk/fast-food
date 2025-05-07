@@ -22,21 +22,20 @@
         <a href="/">
             <div class="nav-item active">Головна</div>
         </a>
-        <a href="/catalog/">
+        <a href="/catalog">
             <div class="nav-item">Каталог</div>
         </a>
-        <a href="/about/">
+        <a href="/about">
             <div class="nav-item">Про нас</div>
         </a>
-        <a href="/contact/">
+        <a href="/contact">
             <div class="nav-item">Контакти</div>
         </a>
     </div>
     <div class="nav-right">
-        <a href="/cart/">
+        <a href="/cart">
             <div class="cart"><img src="/assets/icons/Cart.svg" alt="Кошик"></div>
         </a>
-        <a href="/account/" class="btn btn-highlight btn-small">Увійти</a>
     </div>
 </nav>
 
@@ -59,7 +58,7 @@
             смаком.</p>
         <div class="catalog-grid"></div>
 
-        <a href="/catalog/" class="btn btn-primary">Показати увесь каталог <span>-></span></a>
+        <a href="/catalog" class="btn btn-primary">Показати увесь каталог <span>-></span></a>
     </section>
 
     <section id="about">
@@ -71,7 +70,7 @@
             піца та суші, які готуються з любов’ю та за перевіреними рецептами. Завітайте до FastFood та спробуйте
             справжню швидку їжу!
         </p>
-        <a href="/about/" class="btn btn-primary">Дізнайтесь більше <span>-></span></a>
+        <a href="/about" class="btn btn-primary">Дізнайтесь більше <span>-></span></a>
     </section>
 
     <section id="reviews">
@@ -83,7 +82,7 @@
         <div id="cta">
             <h2 class="text-white">Голодний? Замов прямо зараз!</h2>
             <p class="body-text text-disabled">Ваші улюблені страви вже чекають. Швидкість - наш козир!</p>
-            <a href="/catalog/" class="btn btn-highlight">Перейти до каталогу <span>-></span></a>
+            <a href="/catalog" class="btn btn-highlight">Перейти до каталогу <span>-></span></a>
         </div>
     </section>
 </main>
@@ -95,14 +94,15 @@
 
 <script src="/js/database.js"></script>
 <script src="/js/cart.js"></script>
-<script src="/js/reviews.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/components.js"></script>
+
 <script>
     const catalogGrid = document.querySelector('.catalog-grid');
-    fillCatalogItems(catalogGrid, 8);
+    getCatalogItems(catalogGrid, 8);
 
     const reviewGrid = document.getElementById('review-grid');
-    fillReviewItems(reviewGrid, 3);
+    getReviewCards(reviewGrid, 3);
 
     const scrollToCatalog = document.getElementById('scroll-to-catalog');
     scrollToCatalog.addEventListener('click', () => {

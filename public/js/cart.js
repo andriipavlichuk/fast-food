@@ -38,18 +38,16 @@ class Cart {
         return Object.keys(this.cart);
     }
 
+    hasItemWithId(id) {
+        return this.cart.hasOwnProperty(id);
+    }
+
     getQuantity(id) {
         return this.cart[id] || 0;
     }
 
     isEmpty() {
         return Object.keys(this.cart).length === 0;
-    }
-
-    getTotal() {
-        return Object
-            .entries(this.cart)
-            .reduce((total, [id, quantity]) => total + quantity * PRODUCT_TABLE[id].price, 0);
     }
 
     addUpdateListener(callback) {
@@ -75,7 +73,6 @@ class Cart {
             items: Object.entries(this.cart),
             quantities: this.cart,
             length: Object.keys(this.cart).length,
-            total: this.getTotal(),
             isEmpty: this.isEmpty(),
         }
     }

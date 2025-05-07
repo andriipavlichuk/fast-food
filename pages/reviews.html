@@ -12,7 +12,7 @@
 <body>
 
 <main id="review-page">
-    <a href="/about/" class="btn btn-outline"><span><-</span>Назад</a>
+    <a href="/about" class="btn btn-outline"><span><-</span>Назад</a>
 
     <h1 class="text-primary">Відгуки наших клієнтів</h1>
     <p class="body-text text-secondary sub">Будьте свідком того, як чудово працює наш сервіс</p>
@@ -26,11 +26,11 @@
 </footer>
 
 <script src="/js/database.js"></script>
-<script src="/js/reviews.js"></script>
+<script src="/js/components.js"></script>
 
 <script>
     const list = document.getElementById('review-grid');
-    fillReviewItems(list);
+    getReviewCards(list);
 </script>
 </body>
 </html>

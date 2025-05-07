@@ -16,10 +16,10 @@ class Order {
         this.placed_at = 0;
     }
 
-    create(cart, database, delivery_cost) {
-        this.id = Math.floor(Math.random() * 100000);
+    create(cart, prices, delivery_cost) {
+        this.id = 0;
         this.delivery_cost = delivery_cost;
-        this.updateCart(cart, database);
+        this.updateCart(cart, prices);
     }
 
     save() {
@@ -47,13 +47,13 @@ class Order {
         return false;
     }
 
-    updateCart(cart, database) {
+    updateCart(cart, prices) {
         this.items = {};
         this.total = 0;
 
         Object.keys(cart).forEach((item) => {
             const quantity = cart[item];
-            const price = database[item].price;
+            const price = prices[item];
             this.items[item] = {
                 q: quantity,
                 p: price,

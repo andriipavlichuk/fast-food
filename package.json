@@ -1,0 +1,23 @@
+{
+  "name": "fast-food",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cookie-parser": "^1.4.7",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "node-cron": "^3.0.3",
+    "path": "^0.12.7",
+    "pg": "^8.15.6",
+    "resend": "^4.5.0"
+  }
+}
