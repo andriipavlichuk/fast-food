@@ -39,7 +39,7 @@
 </nav>
 
 <main id="about-page">
-    <img src="/assets/Lightbox%20Sign%20Mockup.png" alt="Банер FastFood" class="thumbnail">
+    <div id="thumbnail" role="img" aria-label="Банер FastFood" title="Банер FastFood"></div>
     <h1 class="text-primary">Про нас</h1>
     <p class="sub body-text text-secondary">Де все почалося, наші досягнення та плани на майбутнє</p>
 
@@ -55,10 +55,10 @@
                     використовують лише свіжі інгредієнти, а кур’єри доставляють замовлення так швидко, щоб ви могли
                     насолоджуватися гарячими стравами, ніби вони щойно з кухні.</p>
             </div>
-            <img src="/assets/History.png" alt="Перший заклад" id="history-img">
+            <img src="/assets/History.png" alt="Перший заклад" id="history-img" class="parallax">
         </div>
         <div class="text-n-image">
-            <img src="/assets/Kitchen.png" alt="Перший заклад" id="kitchen-img">
+            <img src="/assets/Kitchen.png" alt="Перший заклад" id="kitchen-img" class="parallax">
             <p class="body-text-large text-primary">Сьогодні FastFood працює в десятках міст, обслуговуючи тисячі
                 клієнтів щодня. Ми розширюємо нашу географію та
                 вдосконалюємо технології, щоб зробити замовлення ще простішими, а доставку — ще швидшою. <br><br>
@@ -151,5 +151,24 @@
 
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
+
+<script>
+    const SMOOTHING = 10;
+    const ANIMATION_OPTIONS = { duration: 100, fill: 'both', easing: 'ease' };
+
+    function imgNewPosition () {
+        const windowCenter = window.innerHeight / 2;
+
+        [...document.getElementsByClassName("parallax")].forEach(element => {
+            const bounds = element.getBoundingClientRect();
+            const offsetY = (bounds.top + bounds.height / 2 - windowCenter) / SMOOTHING;
+            element.animate({ transform: `translateY(${offsetY}px)` }, ANIMATION_OPTIONS);
+        })
+    }
+
+    document.addEventListener('DOMContentLoaded', imgNewPosition);
+    window.addEventListener('resize', imgNewPosition);
+    window.addEventListener('scroll', imgNewPosition);
+</script>
 </body>
 </html>
