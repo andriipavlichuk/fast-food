@@ -76,3 +76,8 @@ h1 {
 #cta {
     margin-top: 48px;
 }
+
+.card.bg-white {
+    opacity: 0;
+    transform: translateY(40px);
+}

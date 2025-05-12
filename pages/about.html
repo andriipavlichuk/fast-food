@@ -155,6 +155,10 @@
 <script>
     const SMOOTHING = 10;
     const ANIMATION_OPTIONS = { duration: 100, fill: 'both', easing: 'ease' };
+    const ANIMATION_OPTIONS2 = { duration: 600, fill: 'both', easing: 'cubic-bezier(.5, .1, 0, 1)' };
+    const CARD_HEIGHT_SHOW = 200;
+
+    const advantagesGrid = document.getElementById('advantages-grid');
 
     function imgNewPosition () {
         const windowCenter = window.innerHeight / 2;
@@ -166,9 +170,28 @@
         })
     }
 
-    document.addEventListener('DOMContentLoaded', imgNewPosition);
+    function showAdvantageCards () {
+        if (window.innerHeight - advantagesGrid.getBoundingClientRect().y < CARD_HEIGHT_SHOW) {
+            return
+        }
+
+        [...document.querySelectorAll('.card.bg-white')].forEach((element, index) => {
+            setTimeout(() => {
+                element.animate(
+                    { transform: 'translateY(0px)', opacity: 1 },
+                    ANIMATION_OPTIONS2
+                );
+            }, index * 100);
+        });
+
+        window.removeEventListener('scroll', showAdvantageCards);
+    }
+
     window.addEventListener('resize', imgNewPosition);
     window.addEventListener('scroll', imgNewPosition);
+    window.addEventListener('scroll', showAdvantageCards);
+    document.addEventListener('DOMContentLoaded', imgNewPosition);
+    document.addEventListener('DOMContentLoaded', showAdvantageCards);
 </script>
 </body>
 </html>
