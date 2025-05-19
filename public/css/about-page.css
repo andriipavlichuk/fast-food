@@ -18,6 +18,26 @@ h1 {
     margin-bottom: 64px;
 }
 
+#scroll-to-left,
+#scroll-to-right {
+    width: calc(100vw - 120px);
+    height: 400px;
+    position: relative;
+    margin: 40px 0 96px -120px;
+    overflow: hidden;
+
+    mask: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%,rgba(0, 0, 0, 0) 100%);
+}
+
+.scroll-content {
+    display: flex;
+    gap: 48px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 #history .text-n-image {
     display: flex;
     gap: 64px;
