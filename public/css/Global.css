@@ -666,12 +666,6 @@ input::placeholder {
     margin-bottom: 24px;
 }
 
-/* == Елементи з паралакс ефектом == */
-
-.parallax {
-    box-shadow: 10px 10px 80px rgba(0, 0, 0, .2);
-}
-
 /* == Футер == */
 
 footer {

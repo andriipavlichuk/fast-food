@@ -55,10 +55,10 @@
                     використовують лише свіжі інгредієнти, а кур’єри доставляють замовлення так швидко, щоб ви могли
                     насолоджуватися гарячими стравами, ніби вони щойно з кухні.</p>
             </div>
-            <img src="/assets/History.png" alt="Перший заклад" id="history-img" class="parallax">
+            <img src="/assets/History.jpg" alt="Перший заклад" id="history-img" class="parallax">
         </div>
         <div class="text-n-image">
-            <img src="/assets/Kitchen.png" alt="Перший заклад" id="kitchen-img" class="parallax">
+            <img src="/assets/Kitchen.jpg" alt="Перший заклад" id="kitchen-img" class="parallax">
             <p class="body-text-large text-primary">Сьогодні FastFood працює в десятках міст, обслуговуючи тисячі
                 клієнтів щодня. Ми розширюємо нашу географію та
                 вдосконалюємо технології, щоб зробити замовлення ще простішими, а доставку — ще швидшою. <br><br>
@@ -151,47 +151,5 @@
 
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
-
-<script>
-    const SMOOTHING = 10;
-    const ANIMATION_OPTIONS = { duration: 100, fill: 'both', easing: 'ease' };
-    const ANIMATION_OPTIONS2 = { duration: 600, fill: 'both', easing: 'cubic-bezier(.5, .1, 0, 1)' };
-    const CARD_HEIGHT_SHOW = 200;
-
-    const advantagesGrid = document.getElementById('advantages-grid');
-
-    function imgNewPosition () {
-        const windowCenter = window.innerHeight / 2;
-
-        [...document.getElementsByClassName("parallax")].forEach(element => {
-            const bounds = element.getBoundingClientRect();
-            const offsetY = (bounds.top + bounds.height / 2 - windowCenter) / SMOOTHING;
-            element.animate({ transform: `translateY(${offsetY}px)` }, ANIMATION_OPTIONS);
-        })
-    }
-
-    function showAdvantageCards () {
-        if (window.innerHeight - advantagesGrid.getBoundingClientRect().y < CARD_HEIGHT_SHOW) {
-            return
-        }
-
-        [...document.querySelectorAll('.card.bg-white')].forEach((element, index) => {
-            setTimeout(() => {
-                element.animate(
-                    { transform: 'translateY(0px)', opacity: 1 },
-                    ANIMATION_OPTIONS2
-                );
-            }, index * 100);
-        });
-
-        window.removeEventListener('scroll', showAdvantageCards);
-    }
-
-    window.addEventListener('resize', imgNewPosition);
-    window.addEventListener('scroll', imgNewPosition);
-    window.addEventListener('scroll', showAdvantageCards);
-    document.addEventListener('DOMContentLoaded', imgNewPosition);
-    document.addEventListener('DOMContentLoaded', showAdvantageCards);
-</script>
 </body>
 </html>
