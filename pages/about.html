@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <p class="body-text-large-justified text-primary">
+        <p class="body-text-large-justified text-primary appearing-text">
             FastFood було засновано у 2017 році з однією простою, але амбітною ідеєю – зробити доставку їжі швидкою,
             доступною та якісною. Ми починали як невеликий стартап, що працював лише в одному місті, але завдяки довірі
             наших клієнтів та наполегливій праці команди нам вдалося вирости в один із провідних сервісів доставки їжі.
@@ -167,7 +167,41 @@
     <a href="#" class="text-link">↑ До гори</a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
+
+<script>
+    // Animate the scrollable sections on page scroll
+    const scrollToLeft = document.getElementById('scroll-to-left');
+    const scrollToRight = document.getElementById('scroll-to-right');
+
+    function galleryNewPosition() {
+        const scrollPosition = window.scrollY;
+        const actualHeight = document.body.scrollHeight - window.innerHeight;
+
+        const newLeftPosition = Math.min(100, scrollPosition / actualHeight * 100);
+        console.log(newLeftPosition);
+
+        gsap.to(scrollToLeft.querySelector('.scroll-content'), {
+            x: `-${newLeftPosition / 4}%`,
+            duration: 0.3,
+            ease: 'power2.ease'
+        });
+
+        gsap.to(scrollToRight.querySelector('.scroll-content'), {
+            x: `${newLeftPosition / 4 - 30}%`,
+            duration: 0.3,
+            ease: 'power2.ease'
+        });
+    }
+
+    window.addEventListener('scroll', galleryNewPosition);
+    document.addEventListener('DOMContentLoaded', galleryNewPosition);
+
+</script>
+
 </body>
 </html>

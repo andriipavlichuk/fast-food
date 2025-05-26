@@ -50,7 +50,7 @@ h1 {
 
 #scroll-to-left,
 #scroll-to-right {
-    width: calc(100vw - 120px);
+    width: calc(100% + 240px);
     height: 400px;
     position: relative;
     margin: 40px 0 96px -120px;

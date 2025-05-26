@@ -103,7 +103,7 @@ ul {
 .body-text-large-justified {
     font-size: 1.25rem;
     text-align: justify;
-    text-indent: 3rem;
+    /*text-indent: 3rem;*/
 }
 
 .body-text-large { font-size: 1.25rem; }
