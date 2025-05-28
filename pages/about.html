@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<nav>
+<nav style="display: none;">
     <a href="/">
         <div class="logo">
             <img src="/assets/Logo.svg" alt="Лого">
@@ -39,39 +39,57 @@
 </nav>
 
 <main id="about-page">
-    <div id="thumbnail" role="img" aria-label="Банер FastFood" title="Банер FastFood"></div>
-    <h1 class="text-primary">Про нас</h1>
-    <p class="sub body-text text-secondary">Де все почалося, наші досягнення та плани на майбутнє</p>
+    <div id="thumbnail" role="img" aria-label="Банер FastFood" title="Банер FastFood">
+        <h1 class="text-white">Про нас</h1>
+        <p class="sub body-text text-white">Де все почалося, наші досягнення та плани на майбутнє</p>
+    </div>
 
     <section id="history">
-        <div class="text-n-image">
-            <div>
-                <h2 class="text-primary">Ми та наша історія</h2>
-                <p class="body-text-large text-primary">FastFood було засновано у 2017 році з однією простою, але
-                    амбітною ідеєю – зробити доставку їжі швидкою, доступною та якісною. Ми починали як невеликий
-                    стартап, що працював лише в одному місті, але завдяки довірі наших клієнтів та наполегливій праці
-                    команди нам вдалося вирости в один із провідних сервісів доставки їжі. З самого початку ми прагнули
-                    поєднати найкращі традиції ресторанного сервісу з оперативністю фаст-фуду. Наші кухарі
-                    використовують лише свіжі інгредієнти, а кур’єри доставляють замовлення так швидко, щоб ви могли
-                    насолоджуватися гарячими стравами, ніби вони щойно з кухні.</p>
+        <div id="scroll-to-left">
+            <div class="scroll-content">
+                <img src="/assets/Red%20Stripe.jpg" alt="Відкриття">
+                <img src="/assets/History.jpg" alt="Перший заклад">
+                <img src="/assets/Open%20Neon%20Sign.jpg" alt="Неонова вивіска">
+                <img src="/assets/Delivery1.jpg" alt="Кур'єр з паперовим пакунком">
             </div>
-            <img src="/assets/History.png" alt="Перший заклад" id="history-img" class="parallax">
         </div>
-        <div class="text-n-image">
-            <img src="/assets/Kitchen.png" alt="Перший заклад" id="kitchen-img" class="parallax">
-            <p class="body-text-large text-primary">Сьогодні FastFood працює в десятках міст, обслуговуючи тисячі
-                клієнтів щодня. Ми розширюємо нашу географію та
-                вдосконалюємо технології, щоб зробити замовлення ще простішими, а доставку — ще швидшою. <br><br>
+
+        <p id="text1" class="body-text-large-justified text-primary appearing-text">
+            FastFood було засновано у 2017 році з однією простою, але амбітною ідеєю – зробити доставку їжі швидкою,
+            доступною та якісною. Ми починали як невеликий стартап, що працював лише в одному місті, але завдяки довірі
+            наших клієнтів та наполегливій праці команди нам вдалося вирости в один із провідних сервісів доставки їжі.
+            З самого початку ми прагнули поєднати найкращі традиції ресторанного сервісу з оперативністю фаст-фуду. Наші
+            кухарі використовують лише свіжі інгредієнти, а кур’єри доставляють замовлення так швидко, щоб ви могли
+            насолоджуватися гарячими стравами, ніби вони щойно з кухні.
+        </p>
+
+        <div id="scroll-to-right">
+            <div class="scroll-content">
+                <img src="/assets/Delivery2.jpg" alt="Пакунки з їжею">
+                <img src="/assets/Kitchen.jpg" alt="Кухня">
+                <img src="/assets/Frying%20Pan.jpg" alt="Пательня">
+                <img src="/assets/Delivery3.jpg" alt="Кур'єр видає замовленням">
+            </div>
+        </div>
+
+        <div>
+            <p class="body-text-large-justified text-primary">
+                Сьогодні FastFood працює в десятках міст, обслуговуючи тисячі клієнтів щодня. Ми розширюємо нашу
+                географію та вдосконалюємо технології, щоб зробити замовлення ще простішими, а доставку — ще швидшою.
+            </p>
+            <br><br>
+            <p class="body-text-large-justified text-primary">
                 Наші кухарі – це експерти у своїй справі. Вони щодня готують бургери, піци та суші за авторськими
-                рецептами, використовуючи тільки свіжі продукти. Логістична команда працює над тим, щоб кожне
-                замовлення було зібране та доставлене без затримок, а кур’єри — це наша гордість, адже саме вони
-                роблять усе, щоб ви отримували свої улюблені страви максимально швидко.</p>
+                рецептами, використовуючи тільки свіжі продукти. Логістична команда працює над тим, щоб кожне замовлення
+                було зібране та доставлене без затримок, а кур’єри — це наша гордість, адже саме вони роблять усе, щоб
+                ви отримували свої улюблені страви максимально швидко.
+            </p>
         </div>
     </section>
 
     <section id="advantages">
         <h2 class="text-primary">Наші цінності та переваги</h2>
-        <p class="body-text-large text-primary">Ми віримо, що якість, швидкість і комфорт можуть існувати разом. Саме
+        <p class="body-text-large-justified text-primary">Ми віримо, що якість, швидкість і комфорт можуть існувати разом. Саме
             тому ми будуємо наш сервіс на трьох головних принципах:</p>
 
         <div id="advantages-grid">
@@ -110,30 +128,30 @@
             </div>
         </div>
 
-        <p class="body-text-large text-primary">Ми обробляємо понад 10 000 замовлень щомісяця, середній час доставки –
+        <p class="body-text-large-justified text-primary">Ми обробляємо понад 10 000 замовлень щомісяця, середній час доставки –
             35 хвилин, але ми продовжуємо працювати над його скороченням. Найпопулярніша страва серед наших клієнтів –
             Королівський бургер, який замовляють найчастіше. Ми співпрацюємо з 100+ професійними кухарями та 500+
             кур'єрами по всій країні, а наш сервіс доступний у 20+ містах, і ми постійно розширюємо географію.</p>
 
         <div id="to-reviews">
             <h5 class="text-primary">Маєте сумніви? Прочитайте </h5>
-            <a href="/reviews/" class="btn btn-primary">Відгуки <span>-></span></a>
+            <a href="/reviews/" class="btn btn-primary">Відгуки <span id="sp-arrow">-></span></a>
         </div>
     </section>
 
     <section id="vision">
         <h2 class="text-primary">Бачення на майбутнє</h2>
-        <p class="body-text-large text-primary">Наша місія – зробити замовлення їжі таким же простим, як дихати. Ми
+        <p class="body-text-large-justified text-primary">Наша місія – зробити замовлення їжі таким же простим, як дихати. Ми
             хочемо, щоб ви не витрачали час на приготування, а могли насолоджуватися смачними стравами без зайвих
             турбот.<br><br> У найближчі роки ми плануємо:</p>
-        <ul class="body-text-large text-primary">
+        <ul class="body-text-large-justified text-primary">
             <li>Запустити доставку у нових містах та країнах.</li>
             <li>Впровадити екологічні упаковки, які будуть повністю біорозкладними.</li>
             <li>Розширити меню та додати більше вегетаріанських і корисних страв.</li>
             <li>Впровадити персональні рекомендації, які допоможуть кожному клієнту знайти ідеальну страву для себе.
             </li>
         </ul><br>
-        <p class="body-text-large text-primary">FastFood – це не просто доставка їжі. Це стиль життя для тих, хто цінує
+        <p class="body-text-large-justified text-primary">FastFood – це не просто доставка їжі. Це стиль життя для тих, хто цінує
             свій час, якість та зручність. Ми завжди готові рухатися вперед, щоб радувати вас ще більше!</p>
     </section>
 
@@ -149,49 +167,75 @@
     <a href="#" class="text-link">↑ До гори</a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/CustomEase.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
 <script src="/js/cart.js"></script>
 <script src="/js/script.js"></script>
 
 <script>
-    const SMOOTHING = 10;
-    const ANIMATION_OPTIONS = { duration: 100, fill: 'both', easing: 'ease' };
-    const ANIMATION_OPTIONS2 = { duration: 600, fill: 'both', easing: 'cubic-bezier(.5, .1, 0, 1)' };
-    const CARD_HEIGHT_SHOW = 200;
+    gsap.registerPlugin(ScrollTrigger);
 
-    const advantagesGrid = document.getElementById('advantages-grid');
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+        const actualHeight = document.body.scrollHeight - window.innerHeight;
 
-    function imgNewPosition () {
-        const windowCenter = window.innerHeight / 2;
+        const newLeftPosition = Math.min(1, scrollPosition / actualHeight);
+        console.log(newLeftPosition);
 
-        [...document.getElementsByClassName("parallax")].forEach(element => {
-            const bounds = element.getBoundingClientRect();
-            const offsetY = (bounds.top + bounds.height / 2 - windowCenter) / SMOOTHING;
-            element.animate({ transform: `translateY(${offsetY}px)` }, ANIMATION_OPTIONS);
+        gsap.to('#scroll-to-left .scroll-content', {
+            x: `-${newLeftPosition * 25}%`,
+            duration: 0.3,
+            ease: 'power2.ease'
+        });
+
+        gsap.to('#scroll-to-right .scroll-content', {
+            x: `${newLeftPosition * 25 - 30}%`,
+            duration: 0.3,
+            ease: 'power2.ease'
+        });
+
+        gsap.to('#sp-arrow', {
+            rotation: 90 - newLeftPosition * 180,
+            duration: 0.3,
+            ease: 'power2.ease'
         })
     }
 
-    function showAdvantageCards () {
-        if (window.innerHeight - advantagesGrid.getBoundingClientRect().y < CARD_HEIGHT_SHOW) {
-            return
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
+
+    // Break a text into lines
+    const split = new SplitText(".appearing-text", { type: "lines, words" });
+    [...split.lines].forEach((line, index) => { line.style.zIndex = `${index +1}`; })
+
+    gsap.from(split.words, {
+        duration: 0.5,
+        y: 20,
+        stagger: 0.005,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: "#text1",
+            start: "top center",
+            toggleActions: "play none none reverse"
         }
+    });
 
-        [...document.querySelectorAll('.card.bg-white')].forEach((element, index) => {
-            setTimeout(() => {
-                element.animate(
-                    { transform: 'translateY(0px)', opacity: 1 },
-                    ANIMATION_OPTIONS2
-                );
-            }, index * 100);
-        });
+    gsap.from("#advantages-grid .card", {
+        duration: 0.6,
+        y: 40,
+        opacity: 0,
+        stagger: 0.1,
+        ease: CustomEase.create("", ".5, .1, 0, 1"),
+        scrollTrigger: {
+            trigger: "#advantages-grid",
+            start: "top center",
+            toggleActions: "play none none reverse"
+        }
+    });
 
-        window.removeEventListener('scroll', showAdvantageCards);
-    }
-
-    window.addEventListener('resize', imgNewPosition);
-    window.addEventListener('scroll', imgNewPosition);
-    window.addEventListener('scroll', showAdvantageCards);
-    document.addEventListener('DOMContentLoaded', imgNewPosition);
-    document.addEventListener('DOMContentLoaded', showAdvantageCards);
 </script>
+
 </body>
 </html>

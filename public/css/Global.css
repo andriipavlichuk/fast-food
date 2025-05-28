@@ -102,6 +102,12 @@ ul {
     padding-left: 1.75rem;
 }
 
+.body-text-large-justified {
+    font-size: 1.25rem;
+    text-align: justify;
+    /*text-indent: 3rem;*/
+}
+
 .body-text-large { font-size: 1.25rem; }
 .body-text { font-size: 1rem; }
 .body-text-small { font-size: 0.75rem; }
@@ -666,12 +672,6 @@ input::placeholder {
 
 #cta p {
     margin-bottom: 24px;
-}
-
-/* == Елементи з паралакс ефектом == */
-
-.parallax {
-    box-shadow: 10px 10px 80px rgba(0, 0, 0, .2);
 }
 
 /* == Футер == */
