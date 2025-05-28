@@ -4,87 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13d43fc8-c91f-43f3-a888-45b116c33cf7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.htaccess" beforeDir="false" />
+    <list default="true" id="13d43fc8-c91f-43f3-a888-45b116c33cf7" name="Changes" comment="Animated pictures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/CTA Background.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/CTA Background.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Delivery Guy.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Delivery Guy.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/History.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/History.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Kitchen.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Kitchen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Lightbox Sign Mockup.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Lightbox Sign Mockup.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/Logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/Logo.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Andrii.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Andrii.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Bohdan.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Bohdan.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Iryna.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Iryna.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Kateryna.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Kateryna.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Maryna.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Maryna.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Maxym.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Maxym.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Oleg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Oleg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Oleksandr.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Oleksandr.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Olga.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Olga.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Sofia.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Sofia.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/avatars/Vladyslav.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/avatars/Vladyslav.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Cart.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Cart.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Check.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Check.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Clients.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Clients.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Quality.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Quality.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Speed.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Speed.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/Star.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/Star.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icons/StarOutline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/icons/StarOutline.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/products/Product9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/products/Product9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/cart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/catalog/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/catalog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/contact/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/Global.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/Global.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/about-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/about-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/account-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/account-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/cart-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/cart-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/catalog-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/catalog-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/contact-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/contact-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/order-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/order-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/page-404.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/page-404.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/place-order-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/place-order-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/review-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/review-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/database.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/database.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/form-validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/form-validation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/load-orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/load-orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/reviews.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/reviews.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/order/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/place_order/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/place_order.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/about-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/about-page.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +22,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -122,22 +50,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.index.js.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "express",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\andre\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.index.js.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;about-parallax&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andre\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Studio\fast-food\pages" />
@@ -165,7 +93,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.26053.12" />
+        <option value="bundled-js-predefined-d6986cc7102b-6a121458b545-JavaScript-WS-251.25410.117" />
       </set>
     </attachedChunks>
   </component>
@@ -180,7 +108,42 @@
       <workItem from="1745928524123" duration="180000" />
       <workItem from="1745928719321" duration="656000" />
       <workItem from="1745929392202" duration="2449000" />
+      <workItem from="1747028081033" duration="446000" />
+      <workItem from="1747028592665" duration="5109000" />
+      <workItem from="1747049697002" duration="2000" />
+      <workItem from="1747113941921" duration="8000" />
+      <workItem from="1747125858532" duration="299000" />
+      <workItem from="1747200807497" duration="2540000" />
+      <workItem from="1747459106514" duration="753000" />
+      <workItem from="1747462004125" duration="1984000" />
+      <workItem from="1747637506480" duration="4586000" />
+      <workItem from="1748237726635" duration="9196000" />
     </task>
+    <task id="LOCAL-00001" summary="Added parallax effect for images in About page">
+      <option name="closed" value="true" />
+      <created>1747032629901</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1747032629901</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added parallax effect for cards in About page">
+      <option name="closed" value="true" />
+      <created>1747035341907</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747035341907</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Animated pictures">
+      <option name="closed" value="true" />
+      <created>1748244045082</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1748244045082</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,12 +155,17 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/express" />
+                        <option value="about-parallax" />
                       </list>
                     </value>
                   </entry>
@@ -208,5 +176,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added parallax effect for images in About page" />
+    <MESSAGE value="Added parallax effect for cards in About page" />
+    <MESSAGE value="Animated pictures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Animated pictures" />
   </component>
 </project>
