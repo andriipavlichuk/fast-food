@@ -84,7 +84,7 @@ function createReviewCard(id, name, avatar, rating, comment) {
                     <p class="text-primary h6 review-author-name">${name}</p>
                     <div class="review-rating">
                         ${new Array(5).fill(0).map((_, i) => `
-                            <img src="/assets/icons/Star${i < rating ? "" : "Outline"}.svg" alt="Зірка">
+                            <img src="/assets/icons/Star${i < rating ? "" : "Outline"}.svg" alt="Зірка" width="20" height="20">
                         `).join("")}               
                     </div>
                 </div>
@@ -121,6 +121,8 @@ function createOrderProgressCard(id, placed_at = 0, stage = -1) {
     if (stage < 0) {
         stage = calculateOrderStage(placed_at);
     }
+
+
     const progress = 100 * Math.min(stage, ORDER_STAGES.length) / (ORDER_STAGES.length - 1);
     const progress_circles = ORDER_STAGES.map((_, index) =>
         `<div class="stage-circle${index <= stage ? ' active' : ''}"></div>`

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FastFood • Кошик</title>
     <link rel="icon" type="image/ico" href="/favicon.ico">
-    <link rel="stylesheet" href="/css/Global.css">
-    <link rel="stylesheet" href="/css/cart-page.css">
+    <link rel="stylesheet" href="/css/Global.min.css">
+    <link rel="stylesheet" href="/css/cart-page.min.css">
 </head>
 
 <body>
@@ -63,11 +63,11 @@
     <a href="#" class="text-link">↑ До гори</a>
 </footer>
 
-<script src="/js/database.js"></script>
-<script src="/js/cart.js"></script>
-<script src="/js/order.js"></script>
-<script src="/js/components.js"></script>
-<script src="/js/script.js"></script>
+<script src="/js/database.min.js"></script>
+<script src="/js/cart.min.js"></script>
+<script src="/js/order.min.js"></script>
+<script src="/js/components.min.js"></script>
+<script src="/js/script.min.js"></script>
 <script>
     const grid = document.getElementById('items');
     const placeOrder = document.getElementById('place-order');
@@ -128,23 +128,6 @@
 
     const container = document.getElementById('active-orders');
     getActiveOrders(container, () => document.getElementById("no-active-orders").classList.remove("hidden"));
-
-    // const active_orders = localStorage.getItem('active_orders');
-    // if (active_orders) {
-    //     document.getElementById("no-active-orders").classList.add("hidden");
-    //     const container = document.getElementById('active-orders');
-    //
-    //     JSON.parse(active_orders).forEach(order_entries => {
-    //         const active_order = new Order();
-    //         active_order.fromArray(order_entries);
-    //
-    //         const link = document.createElement('a');
-    //         link.href = `/order/?id=${active_order.id}`;
-    //         link.appendChild(createOrderCard(active_order.id, active_order.receiver.address, active_order.placed_at))
-    //         container.appendChild(link);
-    //         updateOrderStages(active_order.id);
-    //     });
-    // }
 </script>
 </body>
 </html>
