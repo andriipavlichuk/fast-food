@@ -87,8 +87,11 @@ p {
 }
 
 h1, .h1 {
+    display: block;
     margin-block: 0.67em;
+    margin-inline: 0;
     font-size: 2em;
+    unicode-bidi: isolate;
 }
 h2, .h2 { font-size: 2rem; }
 h3, .h3 { font-size: 1.75rem; }
