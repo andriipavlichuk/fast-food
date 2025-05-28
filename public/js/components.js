@@ -24,7 +24,7 @@ function createProductCard(productId, name, description, image, price, isTop, ca
             ${isTop ? '<span class="badge bg-highlight text-white">ТОП</span>' : ''}
             <img src="${image}" alt="${name}">
             <div class="card-body">
-                <h5 class="text-primary card-title">${name}</h5>
+                <p class="text-primary h5 card-title">${name}</p>
                 <p class="body-text-small text-secondary card-description">${description}</p>
                 <div class="card-bottom">
                     <h3 class="card-price text-primary">${price}₴</h3>
@@ -81,7 +81,7 @@ function createReviewCard(id, name, avatar, rating, comment) {
             <div class="review-author">
                 <img src="${avatar}" alt="${name}">
                 <div class="right">
-                    <h6 class="text-primary review-author-name">${name}</h6>
+                    <p class="text-primary h6 review-author-name">${name}</p>
                     <div class="review-rating">
                         ${new Array(5).fill(0).map((_, i) => `
                             <img src="/assets/icons/Star${i < rating ? "" : "Outline"}.svg" alt="Зірка">

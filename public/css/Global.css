@@ -19,7 +19,7 @@ input[type=number] {
 }
 
 :root {
-    --link: 185, 136, 248;
+    --link: 106, 76, 146;
     --link-hover: 213, 184, 251;
 
     --danger: 246, 79, 79;
@@ -28,8 +28,8 @@ input[type=number] {
     --gold: 255, 212, 59;
     --gold-hover: 255, 221, 98;
 
-    --highlight: 118, 198, 173;
-    --highlight-hover: 152, 212, 194;
+    --highlight: 55, 124, 102;
+    --highlight-hover: 95, 150, 133;
 
     --primary: 59, 65, 60;
     --primary-hover: 108, 112, 109;
@@ -76,7 +76,8 @@ h1, h2, h3, h4, h5, h6, p, label, ul, ol, a, td {
     font-family: 'Inter', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 650;
     line-height: 1.2;
     letter-spacing: 0.01em;
@@ -87,14 +88,12 @@ p {
     line-height: 1.25;
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.5rem; }
-h5 { font-size: 1.25rem; }
-h6 { font-size: 1rem; }
-
-section h1 { font-size: 2.5rem; }
+h1, .h1 { font-size: 2.5rem; }
+h2, .h2 { font-size: 2rem; }
+h3, .h3 { font-size: 1.75rem; }
+h4, .h4 { font-size: 1.5rem; }
+h5, .h5 { font-size: 1.25rem; }
+h6, .h6 { font-size: 1rem; }
 
 ul {
     font-weight: 400;
